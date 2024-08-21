@@ -19,10 +19,6 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi.My name is Harshwardhan Fartale. I am currently a Project Associate at Indian Institute of Science (IISC) Bangalore. Previously, I served as a Data Scientist at Bajaj Finserv Health and a Machine Learning Intern at Indian Institute of Technology, Indore.
+Hi.My name is Harshwardhan Fartale. I am currently a Project Associate at Indian Institute of Science (IISC) Bangalore. Previously, I served as a Data Scientist at Bajaj Finserv Health and a Machine Learning Intern at Indian Institute of Technology, Indore.My Research Interests include Machine Learning, Optimization & Natural Language Processing.
 
-My Research Interests include Machine Learning, Optimization & Natural Language Processing.
-
-I have done my Bachelors of Technology in Electrical Engineering from National Institute of Technology, Hamirpur.
-
-In my free time, you can find me pouring over history books, playing Age of Empires II or just solving Mathematical Problems.
+I have done my Bachelors of Technology in Electrical Engineering from National Institute of Technology, Hamirpur.In my free time, you can find me pouring over history books, playing Age of Empires II or just solving Mathematical Problems.

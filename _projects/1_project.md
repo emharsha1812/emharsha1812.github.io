@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 1
-description: with background image
+title: Tinker with ML
+description: Collection of Learnings compiled from my ML Journey
 img: assets/img/12.jpg
 importance: 1
 category: work
