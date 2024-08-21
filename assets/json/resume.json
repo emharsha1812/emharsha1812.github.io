@@ -44,9 +44,7 @@
       "startDate": "2024-06",
       "endDate": "Present",
       "summary": "Designed and implemented a high-performance statistical model for fraudulent transaction prediction",
-      "highlights": [
-        "Achieved the highest abuse detection rate among all models"
-      ]
+      "highlights": ["Achieved the highest abuse detection rate among all models"]
     },
     {
       "name": "OpenMined",
@@ -115,58 +113,27 @@
     {
       "name": "Programming Languages",
       "level": "",
-      "keywords": [
-        "Python",
-        "C++",
-        "SQL",
-        "Solidity"
-      ]
+      "keywords": ["Python", "C++", "SQL", "Solidity"]
     },
     {
       "name": "Python Libraries",
       "level": "",
-      "keywords": [
-        "NumPy",
-        "pandas",
-        "Matplotlib",
-        "Scikit-learn",
-        "JAX",
-        "OpenCV",
-        "spacy",
-        "YOLOV8"
-      ]
+      "keywords": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "OpenCV", "spacy", "YOLOV8"]
     },
     {
       "name": "Deep Learning",
       "level": "",
-      "keywords": [
-        "Tensorflow",
-        "Pytorch",
-        "PySyft",
-        "OpenCV",
-        "Neo4j"
-      ]
+      "keywords": ["Tensorflow", "Pytorch", "PySyft", "OpenCV", "Neo4j"]
     },
     {
       "name": "Other Software/Platforms",
       "level": "",
-      "keywords": [
-        "LaTeX",
-        "MATLAB",
-        "Linux Kernel",
-        "Google Cloud Platform",
-        "Firebase",
-        "Adobe Illustrator"
-      ]
+      "keywords": ["LaTeX", "MATLAB", "Linux Kernel", "Google Cloud Platform", "Firebase", "Adobe Illustrator"]
     },
     {
       "name": "Technical Writing",
       "level": "",
-      "keywords": [
-        "LLM-Blog",
-        "Medium",
-        "Hashnode"
-      ]
+      "keywords": ["LLM-Blog", "Medium", "Hashnode"]
     }
   ],
   "languages": [],
