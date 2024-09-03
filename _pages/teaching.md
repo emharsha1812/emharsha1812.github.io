@@ -2,13 +2,18 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Materials for courses you taught. Replace this text with your description.
-nav: false
+description: 
+nav: true
 nav_order: 6
 ---
 
-Teaching Assistant for Centre for Continuing Education (CCE)
+### Teaching Assistant for Centre for Continuing Education (CCE)
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+Working as a TE for CCE course taught by [Professor Sashikumaar Ganesan](https://cds.iisc.ac.in/faculty/sashi/)
 
-Organize your courses by years, topics, or universities, however you like!
+Task - Creating Assignments on courses of 
+1. Probability & Statistics
+2. Linear Algebra
+3. Data Preprocessing 
+
+Github [Link](https://github.com/emharsha1812/CCE_Assignment)
