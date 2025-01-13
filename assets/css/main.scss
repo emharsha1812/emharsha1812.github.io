@@ -23,3 +23,39 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+
+// Table styles
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+  
+  th, td {
+    padding: 12px;
+  }
+}
+
+// Light mode - much more subtle backgrounds
+html[data-theme='light'] {
+  table {
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.05);  // Very light gray
+    }
+    tr:nth-child(odd) {
+      background-color: #ffffff;  // Pure white
+    }
+  }
+}
+
+// Dark mode - darker backgrounds
+html[data-theme='dark'] {
+  table {
+    tr:nth-child(even) {
+      background-color: #2a2a2a;  // Darker gray
+    }
+    tr:nth-child(odd) {
+      background-color: #1a1a1a;  // Darkest gray
+    }
+  }
+}

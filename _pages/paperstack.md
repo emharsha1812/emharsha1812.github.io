@@ -2,45 +2,38 @@
 layout: page
 title: PaperStack
 permalink: /paperstack/
-description: A collection of technical books I'm reading and research papers I've studied.
+description: All the books I am hoping to read and complete in 2025
 nav: true
 nav_order: 5
 ---
 
-## 📚 Currently Reading
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+</style>
 
-### MLOps & ML Systems Design
-* **Building Machine Learning Powered Applications** by Emmanuel Ameisen
-  * Status: Currently on Chapter 4
-  * Key Topics: ML Systems Design, Production ML
-  * Notes: Excellent practical insights on building ML services that actually work in production.
+## 📚 Books & Technical Reading
 
-* **Designing Machine Learning Systems** by Chip Huyen
-  * Status: In Progress
-  * Focus Areas: ML System Architecture, Data Engineering
-  * Notes: Great coverage of end-to-end ML system design considerations.
+| Type | Title & Author | Status | Notes |
+|------|----------------|---------|--------|
+| LLMs | **Hands-On Large Language Models. Language Understanding and Generation** <br> *Jay Alammar & Maarten Grootendorst* | Chapter 1 | Quick Guide to LLMs|
+| LLMs | **Build a Large Language Model from scratch** <br> *Sebastian Raschka* | Chapter 1 | Comprehensive guide on how to build your own LLM|
+| LLMs | **LLM Engineer's Handbook** <br> *Paul lusztin & Maxime Labonne* | Chapter 1 | Excellent practical insights on LLMs in production |
+| LLMs | **AI Engineering** <br> *Chip Huyen* | - | Building Applications with Foundational Models |
 
-## 📑 Research Papers
 
-### MLOps & Model Deployment
-* **Challenges in Deploying Machine Learning: a Survey of Case Studies** (2020)
-  * Authors: Andrei Paleyes, Raoul-Gabriel Urma, Neil D. Lawrence
-  * Venue: NeurIPS
-  * Key Takeaways: 
-    * Comprehensive analysis of ML deployment challenges
-    * Real-world case studies from various industries
-  * [Paper Link](your_link_here)
+<!-- ## 📑 Research Papers
 
-* **Hidden Technical Debt in Machine Learning Systems** (2015)
-  * Authors: D. Sculley et al.
-  * Venue: NeurIPS
-  * Key Insights:
-    * Technical debt specific to ML systems
-    * Long-term maintenance challenges
-  * [Paper Link](your_link_here)
-
----
-
-<div class="note">
-📌 This is a living document that I update regularly as I explore new materials in Machine Learning Systems and MLOps.
-</div>
+| Paper & Authors | Venue | Key Takeaways |
+|----------------|--------|---------------|
+| **Challenges in Deploying ML** (2020) <br> *Paleyes, Urma, Lawrence* | NeurIPS | • Comprehensive analysis of deployment challenges <br> • Industry case studies [[link]](your_link_here) |
+| **Hidden Technical Debt in ML Systems** (2015) <br> *D. Sculley et al.* | NeurIPS | • ML-specific technical debt <br> • Maintenance challenges [[link]](your_link_here) |
+| **ML Systems in the Real World** (2019) <br> *Smith, Johnson, et al.* | ICML | • Production deployment strategies <br> • Performance optimization [[link]](your_link_here) | -->
