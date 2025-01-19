@@ -22,3 +22,5 @@ social: true # includes social icons at the bottom of the page
 Hi.My name is Harshwardhan Fartale. I am currently a Project Associate at Indian Institute of Science (IISC) Bangalore. Previously, I served as a Data Scientist at Bajaj Finserv Health and a Machine Learning Intern at Indian Institute of Technology, Indore.My Research Interests include Machine Learning, Optimization & Natural Language Processing.
 
 I have done my Bachelors of Technology in Electrical Engineering from National Institute of Technology, Hamirpur.In my free time, you can find me pouring over history books, playing Age of Empires II or just solving Mathematical Problems.
+
+I actively contribute to open source projects, currently focusing on building [PULSE (Python Unified Library for Sensor Emulation)](https://github.com/zenoxml/pulse.git). Additionally, I regularly create and contribute machine learning problems to [DeepML](https://www.deep-ml.com/), a platform offering LeetCode-style questions.
