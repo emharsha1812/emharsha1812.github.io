@@ -79,7 +79,7 @@ github_username: emharsha1812 # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
 inspirehep_id: # Inspire HEP author ID
-instagram_id: emharsha1812 # your instagram id
+instagram_id: # your instagram id
 kaggle_id: emharsha1812 # your kaggle id
 keybase_username: # your keybase user name
 lastfm_id: # your lastfm id
@@ -108,6 +108,7 @@ work_url: # work page URL
 x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
+leetcode_username: harshwardhanfartale_nith
 
 contact_note: >
   Reach out to me through whatsapp or email. Thank you!

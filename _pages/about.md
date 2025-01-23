@@ -2,7 +2,6 @@
 layout: about
 title: Harshwardhan
 permalink: /
-# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 subtitle: Perpetual Learner
 
 profile:
@@ -19,8 +18,42 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi.My name is Harshwardhan Fartale. I am currently a Project Associate at Indian Institute of Science (IISC) Bangalore. Previously, I served as a Data Scientist at Bajaj Finserv Health and a Machine Learning Intern at Indian Institute of Technology, Indore.My Research Interests include Machine Learning, Optimization & Natural Language Processing.
+Hello! My name is **Harshwardhan Fartale**, and I am currently working as a **Project Associate** at the **Indian Institute of Science (IISc), Bangalore**.  
 
-I have done my Bachelors of Technology in Electrical Engineering from National Institute of Technology, Hamirpur.In my free time, you can find me pouring over history books, playing Age of Empires II or just solving Mathematical Problems.
+Previously, I served as:
+- **Data Scientist** at **Bajaj Finserv Health**
+- **Machine Learning Intern** at **Indian Institute of Technology, Indore**  
 
-I actively contribute to open source projects, currently focusing on building [PULSE (Python Unified Library for Sensor Emulation)](https://github.com/zenoxml/pulse.git). Additionally, I regularly create and contribute machine learning problems to [DeepML](https://www.deep-ml.com/), a platform offering LeetCode-style questions.
+I earned my **Bachelor of Technology in Electrical Engineering** from the **National Institute of Technology, Hamirpur**.
+
+---
+
+## **Research Interests**
+I am deeply passionate about:
+- **Machine Learning**  
+- **Optimization**  
+- **Natural Language Processing**
+
+---
+
+## **Hobbies & Activities**
+In my free time, I enjoy:
+- Exploring history books  
+- Playing *Age of Empires II*  
+- Solving mathematical problems  
+
+I also:
+- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/)  
+- Create Python notebooks to document interesting solutions and techniques  
+
+---
+
+## **Open-Source Contributions**
+I actively contribute to open-source projects, currently focusing on:
+- [**PULSE (Python Unified Library for Sensor Emulation)**](https://github.com/zenoxml/pulse.git)  
+
+Additionally, I frequently design and contribute machine learning challenges to [**DeepML**](https://www.deep-ml.com/), a platform offering LeetCode-style questions for ML enthusiasts.  
+
+---
+
+Feel free to connect and explore my work!
