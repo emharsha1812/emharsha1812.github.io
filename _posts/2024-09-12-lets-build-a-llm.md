@@ -6,6 +6,8 @@ description: My attempt at building a large language model
 tags: llm,python,machine-learning
 categories: llm,machine-learning,python
 tabs: true
+nav: false
+draft: true
 ---
 
 > What I cannot create, I do not understand
