@@ -30,6 +30,9 @@ tr:nth-child(even) {
 | LLMs | **AI Engineering** <br> *Chip Huyen* | - | Building Applications with Foundational Models |
 
 
+
+## Blogs 
+
 <!-- ## 📑 Research Papers
 
 | Paper & Authors | Venue | Key Takeaways |
