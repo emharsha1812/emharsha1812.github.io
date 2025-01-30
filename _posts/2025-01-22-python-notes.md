@@ -22,3 +22,11 @@ Feel free to explore and stay tuned for updates!
 Here’s the direct GitHub link for quick access: [https://github.com/emharsha1812/Python_Programming_Notebooks](https://github.com/emharsha1812/Python_Programming_Notebooks)
 
 Don't forget to ⭐ star the repository to stay updated with new additions!
+
+
+### PS - Here is a list of helpful links that you can reference from time to time
+
+1. [Python Iterators](https://realpython.com/python-iterators-iterables/) - A super friendly blog on Python Iterators. I recommend taking this [quiz](https://realpython.com/quizzes/python-iterators-iterables/) as well after reading the whole blog.
+
+2. [Memory Management in Python](https://realpython.com/python-memory-management/) - One of those "You should definitely know this" topics.
+
