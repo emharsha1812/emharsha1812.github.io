@@ -169,3 +169,8 @@ d-appendix {
     }
   }
 }
+
+
+ul.task-list input[type="checkbox"]:checked {
+  accent-color: cyan;
+}

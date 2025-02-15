@@ -1,6 +1,15 @@
 ---
 layout: default
 ---
+
+<!-- Global style for accent-color on checked checkboxes -->
+<style>
+  /* Targets any GFM-style task list checkbox */
+  ul.task-list input[type="checkbox"]:checked {
+    accent-color: aqua !important;
+  }
+</style>
+
 {% assign year = page.date | date: '%Y' %}
 {% assign tags = page.tags | join: '' %}
 {% assign categories = page.categories | join: '' %}
@@ -97,3 +106,13 @@ layout: default
     {% include giscus.liquid %}
   {% endif %}
 </div>
+
+<!-- JavaScript to remove the 'disabled' attribute from all checkboxes -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const checkboxes = document.querySelectorAll('.task-list-item-checkbox');
+    checkboxes.forEach(checkbox => {
+      checkbox.removeAttribute('disabled');
+    });
+  });
+</script>

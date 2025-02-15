@@ -4,6 +4,7 @@
 
 // Typography
 
+
 p,
 h1,
 h2,
@@ -22,6 +23,7 @@ strong {
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
+
 
 table {
   td,
@@ -144,9 +146,11 @@ ul.task-list > li ul {
 }
 
 ul.task-list input[type="checkbox"] {
-  margin: 0.275rem 0.5rem 0.5rem -1rem;
-  vertical-align: middle;
+  appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  accent-color: aqua !important;
 }
+
 
 // Math
 
