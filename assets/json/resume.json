@@ -1,84 +1,31 @@
 {
   "basics": {
     "name": "Harshwardhan Fartale",
-    "label": "Electrical Engineering Student",
-    "image": "",
+    "label": "Machine Learning & Data Science Professional",
     "email": "harshwardhanfartale.nith@gmail.com",
-    "phone": "",
-    "url": "emharsha1812.github.io/",
-    "summary": "B.Tech student in Electrical Engineering at National Institute of Technology, Hamirpur with experience in Machine Learning, Data Science, and Open Source contributions.",
     "location": {
-      "address": "",
-      "postalCode": "",
       "city": "Nagpur",
-      "countryCode": "IN",
-      "region": "Maharashtra"
+      "region": "Maharashtra",
+      "country": "India"
     },
     "profiles": [
       {
         "network": "GitHub",
-        "username": "emharsha1812",
         "url": "github.com/emharsha1812"
       },
       {
         "network": "LinkedIn",
-        "username": "emharsha1812",
         "url": "linkedin.com/in/emharsha1812"
+      },
+      {
+        "network": "Portfolio",
+        "url": "emharsha1812.github.io/"
       }
     ]
   },
-  "work": [
-    {
-      "name": "DRDO & (IISC) Indian Institute of Science, Bangalore",
-      "position": "Predoc Associate",
-      "url": "",
-      "startDate": "2024-07",
-      "endDate": "Present",
-      "summary": "Leading Open Source Projects at AiREX (AI for Research and Engineering eXcellence) lab under Professor Sashikumaar Ganesan",
-      "highlights": [
-        "Leading Open Source Projects at AiREX lab under Professor Sashikumaar Ganesan",
-        "Developing comprehensive Machine Learning (ML) systems for CASDIC's combat aircraft applications"
-      ]
-    },
-    {
-      "name": "Bajaj Finserv Health",
-      "position": "Data Scientist",
-      "url": "",
-      "startDate": "2024-01",
-      "endDate": "2024-06",
-      "summary": "Designed and implemented a high-performance statistical model for fraudulent transaction prediction, achieving the highest abuse detection rate among all models",
-      "highlights": []
-    },
-    {
-      "name": "OpenMined",
-      "position": "Open Source Technical Writer",
-      "url": "",
-      "startDate": "2023-01",
-      "endDate": "2023-06",
-      "summary": "Collaborated with the writing team to improve existing user documentation and beginner tutorials in differential privacy",
-      "highlights": [
-        "Active technical writer and contributor, publishing blog posts and articles about federated learning and privacy-preserving machine learning resulting in increased product adoption"
-      ]
-    },
-    {
-      "name": "IIT Indore",
-      "position": "Machine Learning Intern",
-      "url": "",
-      "startDate": "2023-06",
-      "endDate": "2023-07",
-      "summary": "Developed ML models predicting stock prices using Python, achieving 85% accuracy",
-      "highlights": [
-        "Developed ML models predicting stock prices using Python, achieving 85% accuracy. Incorporated news and market data to improve forecasts",
-        "Implemented time series analysis and feature engineering, boosting model accuracy by 25%. Enabled data-driven decision making",
-        "Collaborated with Professor Vimal Bhatia on applying advanced techniques like RNNs for real-time forecasting"
-      ]
-    }
-  ],
-  "volunteer": [],
   "education": [
     {
       "institution": "National Institute of Technology, Hamirpur",
-      "url": "",
       "area": "Electrical Engineering",
       "studyType": "B.Tech",
       "startDate": "2020-12",
@@ -88,7 +35,6 @@
     },
     {
       "institution": "Yashoda High School and Junior College",
-      "url": "",
       "area": "Higher Secondary Education",
       "studyType": "HSC",
       "startDate": "2017-05",
@@ -98,7 +44,6 @@
     },
     {
       "institution": "Somalwar High School, Ramdaspeth",
-      "url": "",
       "area": "Secondary School Certificate",
       "studyType": "SSC",
       "startDate": "2014-04",
@@ -107,85 +52,97 @@
       "courses": []
     }
   ],
-  "awards": [],
-  "certificates": [],
-  "publications": [],
-  "skills": [
+  "work": [
     {
-      "name": "Languages",
-      "level": "",
-      "keywords": ["Python", "C++", "SQL", "Solidity"]
+      "company": "DRDO & IISc Bangalore",
+      "position": "Predoc Associate",
+      "startDate": "2024-07",
+      "endDate": "Present",
+      "highlights": [
+        "Leading Open Source Projects at AiREX lab under Professor Sashikumaar Ganesan",
+        "Developing ML systems for CASDIC's combat aircraft applications"
+      ]
     },
     {
-      "name": "Python Libraries",
-      "level": "",
-      "keywords": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "OpenCV", "spacy", "YOLOV8"]
+      "company": "Bajaj Finserv Health",
+      "position": "Data Scientist",
+      "startDate": "2024-01",
+      "endDate": "2024-06",
+      "highlights": [
+        "Designed high-performance statistical model for fraudulent transaction prediction",
+        "Led development of fraud detection pipeline using graph database technologies"
+      ]
     },
     {
-      "name": "Deep Learning",
-      "level": "",
-      "keywords": ["Tensorflow", "Pytorch", "PySyft", "OpenCV", "Neo4j"]
+      "company": "OpenMined",
+      "position": "Open Source Technical Writer",
+      "startDate": "2023-01",
+      "endDate": "2023-06",
+      "highlights": [
+        "Improved documentation for differential privacy",
+        "Published content on federated learning and privacy-preserving ML"
+      ]
     },
     {
-      "name": "Other Softwares/Platforms",
-      "level": "",
-      "keywords": ["LaTeX", "MATLAB", "Linux Kernel", "Google Cloud Platform", "Firebase", "Adobe Illustrator"]
-    },
-    {
-      "name": "Technical Writing",
-      "level": "",
-      "keywords": ["LLM-Blog", "Medium", "Hashnode"]
+      "company": "IIT Indore",
+      "position": "Machine Learning Intern",
+      "startDate": "2023-06",
+      "endDate": "2023-07",
+      "highlights": [
+        "Developed ML models for stock price prediction with 85% accuracy",
+        "Implemented time series analysis improving accuracy by 25%"
+      ]
     }
   ],
-  "languages": [],
-  "interests": [],
-  "references": [],
+  "skills": {
+    "languages": ["Python", "C++", "SQL", "Solidity"],
+    "frameworks": ["TensorFlow", "PyTorch", "PySyft", "OpenCV", "Neo4j"],
+    "libraries": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "spaCy"],
+    "tools": ["Docker", "Kubernetes", "LaTeX", "MATLAB", "Linux Kernel", "GCP", "Firebase", "Adobe Illustrator"],
+    "databases": ["Neo4j", "Memgraph", "Cypher"]
+  },
   "projects": [
     {
-      "name": "Document Tampering Detection using YOLOV8",
-      "startDate": "",
-      "endDate": "",
-      "description": "Developed a comprehensive forgery detection system with YOLOV8 to identify and classify fraudulent alterations such as overwriting, scribbling, and whitener use",
+      "name": "Document Tampering Detection",
+      "description": "Forgery detection system using YOLOV8",
       "highlights": [
-        "Built an extensive dataset of over 600 document images to train the model for accurate manipulation detection",
-        "Designed a Streamlit-based web interface facilitating intuitive document uploads, enabling users to visualize tampering and analyze detailed results of digital forgery assessments"
-      ],
-      "url": ""
+        "Built dataset of 600+ document images",
+        "Developed Streamlit interface for document analysis"
+      ]
     },
     {
       "name": "Fundus AI",
-      "startDate": "",
-      "endDate": "",
-      "description": "Developed a Complete end-to-end solution to detect eye as well as systemic diseases such as Diabetic Retionpathy, Cataract, Glaucoma, ARMD, Hypertensive Retinopathy",
+      "description": "End-to-end solution for eye disease detection",
       "highlights": [
-        "Developed deep learning smartphone app for efficient ophthalmic disease screening utilizing device camera for accessible healthcare",
-        "Designed 3D-printed smartphone accessory for capturing high-quality fundus imaging compatible with all smartphones and the application",
-        "Technologies used: Python, Keras, Tensorflow, Flutter"
-      ],
-      "url": ""
+        "Developed mobile app for ophthalmic disease screening",
+        "Created 3D-printed smartphone accessory for fundus imaging"
+      ]
     }
   ],
   "positions": [
     {
+      "title": "Machine Learning & Data Science Trainer",
+      "organization": "DRDO Industry Academia Centres of Excellence",
+      "startDate": "2025-01",
+      "endDate": "2025-01"
+    },
+    {
       "title": "Joint Secretary",
       "organization": "Indian Society for Technical Education",
       "startDate": "2023-06",
-      "endDate": "2024-05",
-      "location": "NIT Hamirpur"
+      "endDate": "2024-05"
     },
     {
       "title": "Secretary",
       "organization": "Hult Prize 2023 NIT Hamirpur",
       "startDate": "2022-10",
-      "endDate": "2023-03",
-      "location": "NIT Hamirpur"
+      "endDate": "2023-03"
     },
     {
       "title": "Cloud Facilitator",
       "organization": "Google Developer Students' Club",
       "startDate": "2021-06",
-      "endDate": "2022-12",
-      "location": "NIT Hamirpur"
+      "endDate": "2022-12"
     }
   ]
 }
