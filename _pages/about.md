@@ -43,6 +43,7 @@ In my free time, I enjoy:
 - Solving mathematical problems  
 
 I also:
+- Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
 - Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/)  
 - Create Python notebooks to document interesting solutions and techniques  
 
