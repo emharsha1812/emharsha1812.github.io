@@ -57,10 +57,11 @@
       "company": "DRDO & IISc Bangalore",
       "position": "Predoc Associate",
       "startDate": "2024-07",
-      "endDate": "Present",
+      "endDate": "2025-02",
       "highlights": [
-        "Leading Open Source Projects at AiREX lab under Professor Sashikumaar Ganesan",
-        "Developing ML systems for CASDIC's combat aircraft applications"
+        "Developed comprehensive Machine Learning systems for CASDIC's combat aircraft applications",
+        "Evaluated fine-tuned IBM Granite & Gemma models for SciML using a developed Graph-RAG pipeline, achieving SOTA accuracy on benchmark datasets",
+        "Lead Open Source Projects PULSE & SciREX at AiREX lab under Professor Sashikumaar Ganesan"
       ]
     },
     {
@@ -69,8 +70,8 @@
       "startDate": "2024-01",
       "endDate": "2024-06",
       "highlights": [
-        "Designed high-performance statistical model for fraudulent transaction prediction",
-        "Led development of fraud detection pipeline using graph database technologies"
+        "Designed and implemented a high-performance statistical model for fraudulent transaction prediction, achieving the highest abuse detection rate among all models",
+        "Spearheaded the end-to-end development of a fraud detection pipeline using graph database technologies (Memgraph, Neo4j, Cypher), after evaluating 10+ platforms"
       ]
     },
     {
@@ -79,8 +80,8 @@
       "startDate": "2023-01",
       "endDate": "2023-06",
       "highlights": [
-        "Improved documentation for differential privacy",
-        "Published content on federated learning and privacy-preserving ML"
+        "Collaborated with the writing team to improve existing user documentation and beginner tutorials in differential privacy",
+        "Active technical writer and contributor, publishing blog posts and articles about federated learning and privacy-preserving machine learning resulting in increased product adoption"
       ]
     },
     {
@@ -89,8 +90,8 @@
       "startDate": "2023-06",
       "endDate": "2023-07",
       "highlights": [
-        "Developed ML models for stock price prediction with 85% accuracy",
-        "Implemented time series analysis improving accuracy by 25%"
+        "Developed ML models predicting stock prices using Python, achieving 85% accuracy. Incorporated news and market data to improve forecasts",
+        "Implemented time series analysis and feature engineering, boosting model accuracy by 25% & enabling data-driven decision making"
       ]
     }
   ],
@@ -99,38 +100,37 @@
     "frameworks": ["TensorFlow", "PyTorch", "PySyft", "OpenCV", "Neo4j"],
     "libraries": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "spaCy"],
     "tools": ["Docker", "Kubernetes", "LaTeX", "MATLAB", "Linux Kernel", "GCP", "Firebase", "Adobe Illustrator"],
-    "databases": ["Neo4j", "Memgraph", "Cypher"]
+    "databases": ["Neo4j", "Memgraph", "Cypher"],
+    "technical_writing": ["Substack", "Medium", "Hashnode"]
   },
   "projects": [
     {
       "name": "Document Tampering Detection",
       "description": "Forgery detection system using YOLOV8",
       "highlights": [
-        "Built dataset of 600+ document images",
-        "Developed Streamlit interface for document analysis"
+        "Developed a comprehensive forgery detection system with YOLOV8 to identify and classify fraudulent alterations such as overwriting, scribbling, and whitener use",
+        "Built dataset of 600+ document images for training",
+        "Designed a Streamlit-based web interface facilitating intuitive document uploads, enabling users to visualize tampering and analyze detailed results"
       ]
     },
     {
       "name": "Fundus AI",
       "description": "End-to-end solution for eye disease detection",
       "highlights": [
-        "Developed mobile app for ophthalmic disease screening",
-        "Created 3D-printed smartphone accessory for fundus imaging"
+        "Developed complete solution to detect eye and systemic diseases such as Diabetic Retinopathy, Cataract, Glaucoma, ARMD, Hypertensive Retinopathy",
+        "Developed deep learning smartphone app for efficient ophthalmic disease screening utilizing device camera for accessible healthcare",
+        "Designed 3D-printed smartphone accessory using Tinkercad for capturing high-quality fundus imaging compatible with all smartphones",
+        "Technologies used: Python, Keras, Tensorflow, Flutter, Tinkercad"
       ]
     }
   ],
   "positions": [
     {
       "title": "Machine Learning & Data Science Trainer",
-      "organization": "DRDO Industry Academia Centres of Excellence",
+      "organization": "DRDO Industry Academia Centres of Excellence (DIA-CoEs)",
       "startDate": "2025-01",
-      "endDate": "2025-01"
-    },
-    {
-      "title": "Joint Secretary",
-      "organization": "Indian Society for Technical Education",
-      "startDate": "2023-06",
-      "endDate": "2024-05"
+      "endDate": "2025-01",
+      "description": "Trainer for DRDO Scientists"
     },
     {
       "title": "Secretary",
@@ -142,7 +142,8 @@
       "title": "Cloud Facilitator",
       "organization": "Google Developer Students' Club",
       "startDate": "2021-06",
-      "endDate": "2022-12"
+      "endDate": "2022-12",
+      "description": "NIT Hamirpur"
     }
   ]
 }
