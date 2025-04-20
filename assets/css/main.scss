@@ -59,3 +59,40 @@ html[data-theme='dark'] {
     }
   }
 }
+
+/* ----- Custom Bucket List Styles (Simpler Version) ----- */
+
+.task-list { // Target the whole list if needed
+  padding-left: 1.5rem; // Add some overall indent if desired
+}
+
+.task-list-item {
+list-style-type: none; // Ensure bullets are off
+margin-bottom: 0.75rem; // Space between items
+line-height: 1.5;     // Ensure text aligns nicely with checkbox
+}
+
+// Style the actual checkbox directly
+.task-list-item input[type="checkbox"].task-list-item-checkbox {
+margin-right: 0.7em;        // Space between box and text
+width: 1.15em;               // Make checkbox slightly larger
+height: 1.15em;              // Make checkbox slightly larger
+accent-color: var(--global-theme-color) !important; // Use theme's main color for the check/fill
+                                        // Override the 'aqua' from base.scss
+vertical-align: text-bottom; // Better vertical alignment with text
+cursor: default;             // Indicate it's not clickable by users
+}
+
+// Style the text of completed items
+// Selects elements immediately following a checked checkbox
+.task-list-item input[type="checkbox"].task-list-item-checkbox:checked + * {
+color: var(--global-text-color-light); // Use theme's lighter text color
+text-decoration: line-through;
+opacity: 0.85; // Slightly fade completed text
+}
+
+/* You might need to adjust the selector above if the text isn't the immediate next element */
+/* E.g., if it's wrapped in a span: */
+/* .task-list-item input[type="checkbox"].task-list-item-checkbox:checked + span { ... } */
+
+/* ----- End Custom Bucket List Styles ----- */

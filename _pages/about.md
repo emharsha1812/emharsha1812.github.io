@@ -48,11 +48,6 @@ I also:
 - Create Python notebooks to document interesting solutions and techniques  
 
 ---
-
-## **Open-Source Contributions**
-I actively contribute to open-source projects, currently focusing on:
-- [**PULSE (Python Unified Library for Sensor Emulation)**](https://github.com/zenoxml/pulse.git)  
-
 Additionally, I frequently design and contribute machine learning challenges to [**DeepML**](https://www.deep-ml.com/), a platform offering LeetCode-style questions for ML enthusiasts.  
 
 ---
