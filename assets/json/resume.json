@@ -11,15 +11,15 @@
     "profiles": [
       {
         "network": "GitHub",
-        "url": "github.com/emharsha1812"
+        "url": "https://github.com/emharsha1812"
       },
       {
         "network": "LinkedIn",
-        "url": "linkedin.com/in/emharsha1812"
+        "url": "https://linkedin.com/in/emharsha1812"
       },
       {
         "network": "Portfolio",
-        "url": "emharsha1812.github.io/"
+        "url": "https://emharsha1812.github.io/"
       }
     ]
   },
@@ -54,12 +54,12 @@
   ],
   "work": [
     {
-      "company": "DRDO & IISc Bangalore",
+      "company": "DRDO & Indian Institute of Science, Bangalore",
       "position": "Predoc Associate",
       "startDate": "2024-07",
-      "endDate": "2025-02",
+      "endDate": "Present",
       "highlights": [
-        "Developed comprehensive Machine Learning systems for CASDIC's combat aircraft applications",
+        "Developed comprehensive Machine Learning systems for CASDIC’s combat aircraft applications",
         "Evaluated fine-tuned IBM Granite & Gemma models for SciML using a developed Graph-RAG pipeline, achieving SOTA accuracy on benchmark datasets",
         "Lead Open Source Projects PULSE & SciREX at AiREX lab under Professor Sashikumaar Ganesan"
       ]
@@ -90,20 +90,32 @@
       "startDate": "2023-06",
       "endDate": "2023-07",
       "highlights": [
-        "Developed ML models predicting stock prices using Python, achieving 85% accuracy. Incorporated news and market data to improve forecasts",
-        "Implemented time series analysis and feature engineering, boosting model accuracy by 25% & enabling data-driven decision making"
+        "Developed ML models predicting stock prices using Python, achieving 85% accuracy and incorporating news and market data to improve forecasts",
+        "Implemented time series analysis and feature engineering, boosting model accuracy by 25% and enabling data-driven decision making"
       ]
     }
   ],
   "skills": {
     "languages": ["Python", "C++", "SQL", "Solidity"],
-    "frameworks": ["TensorFlow", "PyTorch", "PySyft", "OpenCV", "Neo4j"],
-    "libraries": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "spaCy"],
-    "tools": ["Docker", "Kubernetes", "LaTeX", "MATLAB", "Linux Kernel", "GCP", "Firebase", "Adobe Illustrator"],
+    "frameworks": ["TensorFlow", "PyTorch", "PySyft"],
+    "libraries": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "spaCy", "OpenCV"],
+    "llm_tools": ["Huggingface", "Ollama", "LLM Inference"],
+    "tools": ["Docker", "Kubernetes", "LaTeX", "MATLAB", "Linux Kernel", "Google Cloud Platform", "Firebase", "Adobe Illustrator"],
     "databases": ["Neo4j", "Memgraph", "Cypher"],
     "technical_writing": ["Substack", "Medium", "Hashnode"]
   },
   "projects": [
+    {
+      "name": "AIFred – Secure, Local AI Coding Assistant",
+      "description": "Desktop coding assistant enhancing developer productivity with real-time AI support and guaranteed data privacy.",
+      "highlights": [
+        "Launched AIFred, a desktop coding assistant enhancing developer productivity with real-time AI support, while guaranteeing 100% data privacy through a fully local AI pipeline (Ollama for LLM, NVIDIA NeMo for ASR)",
+        "Empowered developers with a seamless voice command interface, featuring accurate, private speech recognition processed entirely on-device for secure, offline querying",
+        "Optimized for low-latency interaction by architecting the fully local AI pipeline, ensuring rapid coding assistance directly on the user’s machine without cloud round-trips",
+        "Delivered an intuitive user experience via an always-accessible Electron overlay UI, minimizing context switching and integrating AI support directly into the coding workflow",
+        "Core Technologies: Python (FastAPI, NeMo, pydub), JavaScript (Electron), Ollama API"
+      ]
+    },
     {
       "name": "Document Tampering Detection",
       "description": "Forgery detection system using YOLOV8",
