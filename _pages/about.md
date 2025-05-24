@@ -18,7 +18,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello! My name is **Harshwardhan Fartale**, and I am currently working as a **Project Associate** at the **Indian Institute of Science (IISc), Bangalore**.  
+Hello! My name is **Harshwardhan Fartale**, and I am currently working as a **Project Associate II** at the **Indian Institute of Science (IISc), Bangalore**.  
 
 Previously, I served as:
 - **Data Scientist** at **Bajaj Finserv Health**
@@ -29,10 +29,9 @@ I earned my **Bachelor of Technology in Electrical Engineering** from the **Nati
 ---
 
 ## **Research Interests**
-I am deeply passionate about:
-- **Machine Learning**  
-- **Optimization**  
-- **Natural Language Processing**
+I am deeply passionate about **Machine Learning and Artificial Intelligence**, with a particular focus on the **Mechanistic Interpretability of Large Language Models**. My research aims to understand how these models process information and make decisions at a fundamental level.
+
+I am actively seeking **collaborative opportunities** with fellow researchers and practitioners who share similar interests in mechanistic interpretability and are excited to explore innovative approaches in this rapidly evolving field.
 
 ---
 
@@ -44,8 +43,7 @@ In my free time, I enjoy:
 
 I also:
 - Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
-- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/)  
-- Create Python notebooks to document interesting solutions and techniques  
+- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/) & or [**Project Euler**]()
 
 ---
 Additionally, I frequently design and contribute machine learning challenges to [**DeepML**](https://www.deep-ml.com/), a platform offering LeetCode-style questions for ML enthusiasts.  
