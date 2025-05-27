@@ -1,7 +1,7 @@
 ---
 layout: post
 title: On Mechanistic Interpretibility in Large Language Models
-date: 2024-09-1 00:12:00
+date: 2025-05-26 00:12:00
 description: Why do we need to look inside an LLM? 
 tags: LLMs, ai
 categories: ai, llms, ml, dl,nlp
