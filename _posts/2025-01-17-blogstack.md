@@ -16,8 +16,4 @@ As a software engineer and ML enthusiast, I often come across insightful blogs t
 ### Generative AI
 1. [*Common pitfalls when building generative AI applications*](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html) by Chip Huyen
 
-This is a living document that I'll continue to update as I discover more valuable resources. Each blog has been selected based on its depth, practical applicability, and clear explanations.
-
-Feel free to suggest any additions or share your thoughts on these resources!
-
-*Last Updated: January 17, 2025*
+2. [*ML CMU Blog*](https://blog.ml.cmu.edu/#)
