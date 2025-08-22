@@ -83,6 +83,30 @@ vertical-align: text-bottom; // Better vertical alignment with text
 cursor: default;             // Indicate it's not clickable by users
 }
 
+
+.paper2code .card-img {
+  width: 100%;
+  height: 200px;  // Fixed height
+  object-fit: cover;
+  object-position: center;
+}
+
+.paper2code .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.paper2code .card {
+  overflow: hidden;
+}
+
+.paper2code .row.no-gutters > div {
+  display: flex;
+  align-items: stretch;
+}
+
+
 // Style the text of completed items
 // Selects elements immediately following a checked checkbox
 .task-list-item input[type="checkbox"].task-list-item-checkbox:checked + * {

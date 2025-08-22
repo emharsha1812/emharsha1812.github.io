@@ -200,6 +200,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
+  papers2code:  # Add this new collection
+    output: true
+    permalink: /papers2code/:title
 
 announcements:
   enabled: true
