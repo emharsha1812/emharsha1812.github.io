@@ -10,7 +10,6 @@ arxiv: https://arxiv.org/abs/1706.03762
 ---
 
 
-Hi there! This is a complete PyTorch implementation of the Transformer architecture from scratch, inspired by the seminal paper "Attention Is All You Need" by Vaswani et al. (2017). The implementation includes all components of the Transformer model, such as multi-head attention, positional encoding, and feed-forward networks.
+Hi there! This is a complete PyTorch implementation of the Transformer architecture from scratch, inspired by the seminal paper "Attention Is All You Need" by Vaswani et al. (2017). The implementation includes all components of the Transformer model, such as multi-head attention, positional encoding, and feed-forward network
 
-
-Git
+Github Repository (Star if for future updates) - Github]
