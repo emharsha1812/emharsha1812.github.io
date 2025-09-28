@@ -1,12 +1,15 @@
-# this file uses prebuilt image in dockerhub
 services:
   jekyll:
     image: amirpourmand/al-folio:latest
-    build: .
+    # build: .   # only if you want to build locally
     ports:
       - 8080:8080
       - 35729:35729
     volumes:
       - .:/srv/jekyll
+      - bundle_cache:/usr/local/bundle   # <-- cache gems
     environment:
       - JEKYLL_ENV=development
+
+volumes:
+  bundle_cache:   # declare the named volume
