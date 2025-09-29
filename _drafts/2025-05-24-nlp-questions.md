@@ -9,8 +9,6 @@ tabs: true
 draft: true
 ---
 
-
-
 ### Q1. What is the difference between stemming and lemmatization ?
 
 The practical distinction between stemming and lemmatization is that, where stemming merely removes common suffixes from the end of word tokens, lemmatization ensures the output word is an existing normalized form of the word (for example, lemma) that can be found in the dictionary.
@@ -49,5 +47,7 @@ The name originates from computational statistics [1], where one wishes to sampl
 
 ### Q6. What basically is Test-Time Compute (TTC)? 
 TTC refers to the amount of computational power used by an AI model when it is generating a response or performing a task after it has been trained. In simple terms, it's the processing power and time required when the model is actually being used, rather than when it is being trained.
+
+
 
 
