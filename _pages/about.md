@@ -9,8 +9,8 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Computational Data Science</p>
-    <p>Indian Institute of Science</p>
+    <p>ADS</p>
+    <p>ZS</p>
     <p>Bangalore, Karnataka</p>
 
 news: false # includes a list of news items
@@ -18,9 +18,10 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hello! My name is **Harshwardhan Fartale**, and I am currently working as a **Project Associate II** at the **Indian Institute of Science (IISc), Bangalore**.  
+Hello! My name is **Harshwardhan Fartale**, and I am currently working as **Advanced Data Scientist** at **ZS** 
 
 Previously, I served as:
+- **Machine Learning Engineer** at **Indian Institute of Science, Bangalore**
 - **Data Scientist** at **Bajaj Finserv Health**
 - **Machine Learning Intern** at **Indian Institute of Technology, Indore**  
 
@@ -37,16 +38,18 @@ I am actively seeking **collaborative opportunities** with fellow researchers an
 
 ## **Hobbies & Activities**
 In my free time, I enjoy:
-- Exploring history books  
+- Getting upto date with AI (its a full time job now ;) 
+- Exploring history books
 - Playing *Age of Empires II*  
 - Solving mathematical problems  
 
 I also:
 - Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
 - Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/) & or [**Project Euler**]()
+- Collaborate with research scholars on academic papers and technical articles
 
 ---
-Additionally, I frequently design and contribute machine learning challenges to [**DeepML**](https://www.deep-ml.com/), a platform offering LeetCode-style questions for ML enthusiasts.  
+<!-- Additionally, I frequently design and contribute machine learning challenges to [**DeepML**](https://www.deep-ml.com/), a platform offering LeetCode-style questions for ML enthusiasts.   -->
 
 ---
 

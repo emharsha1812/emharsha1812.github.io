@@ -256,6 +256,7 @@ exclude:
 keep_files:
   - CNAME
   - .nojekyll
+  - 2025-10-12-watermarking.bib
 
 # Plug-ins
 plugins:
