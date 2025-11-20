@@ -182,6 +182,7 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux-gnu
 
 DEPENDENCIES
@@ -213,4 +214,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.6.3
+   2.6.9

@@ -5,7 +5,7 @@ description: This blog post explores the promises and limits of watermarking; a 
 tags: distill formatting
 # giscus_comments: true
 date: 2025-10-12
-featured: true
+featured: false
 draft: true
 
 authors:
