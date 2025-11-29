@@ -1,0 +1,28 @@
+- id: visionsystems
+  title: "Deep Learning for Vision Systems"
+  author: "Mohamed Elgendy"
+  year: 2020
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/deep-learning-for-vision-systems"
+  thumbnail: "https://m.media-amazon.com/images/I/71MgK4MhOjL._AC_UF1000,1000_QL80_.jpg"
+- id: llama2023
+  title: "Designing Large Language Model Applications"
+  author: "Chip Huyen"
+  year: 2023
+  publisher: "O'Reilly"
+  url: "https://www.oreilly.com/library/view/designing-large-language/9781098152598/"
+  thumbnail: "https://www.oreilly.com/library/cover/9781098166298/1200w630h/"
+- id: dlbishop2024
+  title: "Deep Learning Foundations and Concepts"
+  author: "Chris Bishop"
+  year: 2024
+  publisher: "Springer"
+  url: "https://www.bishopbook.com/"
+  thumbnail: "https://m.media-amazon.com/images/I/61ex1w3dnCL._AC_UF1000,1000_QL80_.jpg"
+- id: llm2024
+  title: "Build a Large Language Model (From Scratch)"
+  author: "Sebastian Raschka"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/build-a-large-language-model-from-scratch"
+  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdbl-wvDgq2r4lAr98w5o5K_enTzhw_QrHg&s"

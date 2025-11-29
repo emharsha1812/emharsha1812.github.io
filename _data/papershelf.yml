@@ -1,0 +1,50 @@
+- id: vaswani2023attentionneed
+  title: "Attention Is All You Need"
+  authors: "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin"
+  year: 2017
+  venue: "NeurIPS"
+  url: "https://arxiv.org/abs/1706.03762"
+  pdf: "https://arxiv.org/pdf/1706.03762.pdf"
+  tags: [transformer, attention, nlp]
+  summary: "Introduces the Transformer architecture, demonstrating that self-attention alone can outperform recurrent and convolutional models for sequence transduction."
+  thumbnail: ""
+- id: dao2022flashattention
+  title: "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
+  authors: "Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré"
+  year: 2022
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2205.14135"
+  pdf: "https://arxiv.org/pdf/2205.14135.pdf"
+  tags: [attention, efficiency, gpu]
+  summary: "Proposes an IO-aware tiled attention kernel that reduces memory traffic and speeds up training while remaining exact."
+  thumbnail: ""
+- id: nvidia2022h100
+  title: "NVIDIA H100 Tensor Core GPU Architecture"
+  authors: "NVIDIA Corporation"
+  year: 2022
+  venue: "Whitepaper"
+  url: "https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-architecture-whitepaper"
+  pdf: "https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-architecture-whitepaper"
+  tags: [hardware, gpu]
+  summary: "Details the architecture of the Hopper H100 GPU with Tensor Cores, memory hierarchy, and performance characteristics relevant to large-model training."
+  thumbnail: ""
+- id: hazyresearch2024brrr
+  title: "GPUs Go Brrr"
+  authors: "Hazy Research"
+  year: 2024
+  venue: "Blog"
+  url: "https://hazyresearch.stanford.edu/blog/2024-05-12-tk"
+  pdf: "https://hazyresearch.stanford.edu/blog/2024-05-12-tk"
+  tags: [hardware, systems, blog]
+  summary: "A practitioner-focused write-up on maximizing GPU throughput for transformer training with Hopper-class accelerators."
+  thumbnail: ""
+- id: sun2025efficient
+  title: "Efficient Attention Mechanisms for Large Language Models: A Survey"
+  authors: "Yutao Sun, Zhenyu Li, Yike Zhang, Tengyu Pan, Bowen Dong, Yuyi Guo, Jianyong Wang"
+  year: 2025
+  venue: "arXiv"
+  url: "https://arxiv.org/abs/2507.19595"
+  pdf: "https://arxiv.org/pdf/2507.19595.pdf"
+  tags: [attention, survey, efficiency]
+  summary: "Surveys the design space of efficient attention variants for LLMs, covering algorithmic approaches and hardware implications."
+  thumbnail: ""

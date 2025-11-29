@@ -257,6 +257,7 @@ keep_files:
   - CNAME
   - .nojekyll
   - 2025-10-12-watermarking.bib
+  - 2025-11-25-flashattention.bib
 
 # Plug-ins
 plugins:

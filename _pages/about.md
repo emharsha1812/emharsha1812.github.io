@@ -16,6 +16,7 @@ profile:
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
+latest_posts: false # hide latest posts section on the about (home) page
 ---
 
 Hello! My name is **Harshwardhan Fartale**, and I am currently working as **Advanced Data Scientist** at **ZS** 
