@@ -18,26 +18,6 @@
   tags: [attention, efficiency, gpu]
   summary: "Proposes an IO-aware tiled attention kernel that reduces memory traffic and speeds up training while remaining exact."
   thumbnail: ""
-- id: nvidia2022h100
-  title: "NVIDIA H100 Tensor Core GPU Architecture"
-  authors: "NVIDIA Corporation"
-  year: 2022
-  venue: "Whitepaper"
-  url: "https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-architecture-whitepaper"
-  pdf: "https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-architecture-whitepaper"
-  tags: [hardware, gpu]
-  summary: "Details the architecture of the Hopper H100 GPU with Tensor Cores, memory hierarchy, and performance characteristics relevant to large-model training."
-  thumbnail: ""
-- id: hazyresearch2024brrr
-  title: "GPUs Go Brrr"
-  authors: "Hazy Research"
-  year: 2024
-  venue: "Blog"
-  url: "https://hazyresearch.stanford.edu/blog/2024-05-12-tk"
-  pdf: "https://hazyresearch.stanford.edu/blog/2024-05-12-tk"
-  tags: [hardware, systems, blog]
-  summary: "A practitioner-focused write-up on maximizing GPU throughput for transformer training with Hopper-class accelerators."
-  thumbnail: ""
 - id: sun2025efficient
   title: "Efficient Attention Mechanisms for Large Language Models: A Survey"
   authors: "Yutao Sun, Zhenyu Li, Yike Zhang, Tengyu Pan, Bowen Dong, Yuyi Guo, Jianyong Wang"

@@ -6,7 +6,7 @@
   url: "https://www.manning.com/books/deep-learning-for-vision-systems"
   thumbnail: "https://m.media-amazon.com/images/I/71MgK4MhOjL._AC_UF1000,1000_QL80_.jpg"
 - id: llama2023
-  title: "Designing Large Language Model Applications"
+  title: "AI Engineering"
   author: "Chip Huyen"
   year: 2023
   publisher: "O'Reilly"
@@ -26,3 +26,109 @@
   publisher: "Manning Publications"
   url: "https://www.manning.com/books/build-a-large-language-model-from-scratch"
   thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdbl-wvDgq2r4lAr98w5o5K_enTzhw_QrHg&s"
+- id: ensemble2024
+  title: "Ensemble Methods for Machine Learning"
+  author: "Gautam Kunapuli"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.oreilly.com/library/view/ensemble-methods-for/9781617297137/"
+  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG89tn28MSy2PdjPMv9vTFubQ5_UDr1Rum_g&s"
+- id: rag2024
+  title: "A Simple Guide to Retrieval Augmented Generation"
+  author: "Abhinav Kimothi"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/a-simple-guide-to-retrieval-augmented-generation"
+  thumbnail: "https://m.media-amazon.com/images/I/6101xn1-O1L._AC_UF1000,1000_QL80_.jpg"
+- id: tabular2025
+  title: "Machine Learning for Tabular Data"
+  author: "Mark Ryan"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/machine-learning-for-tabular-data"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781633438545/400w/"
+- id: mathdeeplearning
+  title: "Math and Architectures of Deep Learning"
+  author: "Krishnendu Chaudhury etal"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/math-and-architectures-of-deep-learning"
+  thumbnail: "https://m.media-amazon.com/images/I/61fJw4jBB9L._UF1000,1000_QL80_.jpg"
+- id: insidedeeplearning
+  title: "Inside Deep Learning Math, Algorithms, Models"
+  author: "Edward Raff"
+  year: 2022
+  publisher: "Manning Publications"
+  url: "https://www.oreilly.com/covers/urn:orm:book:9781617298639/400w/"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781617298639/400w/"
+- id: nlpgettingstarted
+  title: "Getting Started with Natural Language Processing"
+  author: "Ekaterina Kochmar"
+  year: 2024
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/getting-started-with-natural-language-processing"
+  thumbnail: "https://m.media-amazon.com/images/I/615HGs2PzLL._AC_UF1000,1000_QL80_.jpg"
+- id: nlpinaction
+  title: "Natural Language Processing in Action"
+  author: "Hobson Lane, Maria Dyshel"
+  year: 2025
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/natural-language-processing-in-action-second-edition"
+  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuchuloAwXHWgbwSt7HlmjcBM5hhzaq4iZwg&s"
+- id: handsonllm
+  title: "Hands-On Large Language Models"
+  author: "Jay Alammar, Maarten Grootendorst"
+  year: 2024
+  publisher: "Oreilly"
+  url: "https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781098150952/400w/"
+- id: designingllm
+  title: "Designing Large Language Model Applications"
+  author: "Suhas Pai"
+  year: 2025
+  publisher: "Oreilly"
+  url: "https://www.oreilly.com/library/view/designing-large-language/9781098150495/"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781098150495/400w/"
+- id: howllmswork
+  title: "How Large Language Models Work"
+  author: "Drew Farris, Stella Biderman, Edward Raff"
+  year: 2025
+  publisher: "Oreilly"
+  url: "https://www.oreilly.com/library/view/how-large-language/9781633437081/"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781633437081/400w/"
+- id: llmsinproduction
+  title: "LLMs in Production"
+  author: "Christopher Brousseau and Matthew Sharp"
+  year: 2025
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/llms-in-production"
+  thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtcmvENr6daG0jw5ti0IjzCgQp1f4G6jrRrg&s"
+- id: gpucuda
+  title: "GPU Programming with C++ and CUDA"
+  author: "Paulo Motta"
+  year: 2025
+  publisher: "Packt Publishing"
+  url: "https://www.packtpub.com/en-us/product/gpu-programming-with-c-and-cuda-9781805128823?srsltid=AfmBOoq8FORmMgtxMU4dlSWO3obcWfaZDL2Df0BWBSji41DVJbBsLylg"
+  thumbnail: "https://content.packt.com/_/image/original/B20897/cover_image.jpg?version=1756470651"
+- id: unique-id
+  title: "Programming Massively Parallel Processors"
+  author: "Wen-mei Hwu, David Kirk"
+  year: 2024
+  publisher: "MK"
+  url: "https://www.amazon.in/Programming-Massively-Parallel-Processors-Hands/"
+  thumbnail: "https://m.media-amazon.com/images/I/71VXgKBcF7L._AC_UF1000,1000_QL80_.jpg"
+- id: fluentpython
+  title: "Fluent Python"
+  author: "Luciano Ramalho"
+  year: 2025
+  publisher: "Oreilly"
+  url: "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"
+  thumbnail: "https://www.oreilly.com/covers/urn:orm:book:9781492056348/400w/"
+- id: aiagents
+  title: "AI Agents in Action"
+  author: "Micheal Lanham"
+  year: 2025
+  publisher: "Manning Publications"
+  url: "https://www.manning.com/books/ai-agents-in-action"
+  thumbnail: "https://www.oreilly.com/library/cover/9781633436343/1200w630h/"
+
