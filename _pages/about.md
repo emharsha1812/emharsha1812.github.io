@@ -46,7 +46,7 @@ In my free time, I enjoy:
 
 I also:
 - Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
-- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/) & or [**Project Euler**]()
+- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/) & or [**Project Euler**](https://projecteuler.net/)
 - Collaborate with research scholars on academic papers and technical articles
 
 ---
