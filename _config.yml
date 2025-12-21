@@ -135,6 +135,7 @@ blog_name: Knowledge Base # blog_name will be displayed in your blog page
 blog_description: Resources for learning and development # blog_description will be displayed in your blog page
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
+enable_blog_viewing: true # enable page views on blog posts
 
 # Pagination
 pagination:

@@ -31,6 +31,12 @@ layout: default
       {% if page.author %}by {{ page.author }}{% endif %}
       {% if page.last_updated %}, last updated in {{ page.last_updated | date: '%B %d, %Y' }}{% endif %}
       {% if page.meta %}• {{ page.meta }}{% endif %}
+      {% if site.enable_blog_viewing %}
+        &nbsp; &middot; &nbsp;
+        <span id="busuanzi_container_page_pv">
+          <i class="fa-regular fa-eye fa-sm"></i> <span id="busuanzi_value_page_pv"></span>
+        </span>
+      {% endif %}
     </p>
     <p class="post-tags">
       {% if url_beginning == '/blog/' %}

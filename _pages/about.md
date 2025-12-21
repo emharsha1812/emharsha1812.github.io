@@ -55,3 +55,10 @@ I also:
 ---
 
 Feel free to connect and explore my work!
+
+<br>
+<div style="text-align: center;">
+  <span id="busuanzi_container_site_uv">
+    Total unique visitors: <span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
