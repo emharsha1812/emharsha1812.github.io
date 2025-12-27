@@ -8,7 +8,7 @@ middle_name: Sanjay
 last_name: Fartale
 email: harshwardhanfartale.nith@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  Portfolio of Harshwardhan Fartale, an Advanced Data Scientist specializing in Machine Learning and Artificial Intelligence.
 footer_text:
 keywords: harshwardhan fartale, harshwardhan, portfolio, Harsh # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -447,6 +447,7 @@ enable_project_categories: true # enables categorization of projects into multip
 enable_medium_zoom: true # enables image zoom feature (as on medium.com)
 enable_progressbar: true # enables a horizontal progress bar linked to the vertical scroll position
 enable_video_embedding: false # enables video embedding for bibtex entries. If false, the button opens the video link in a new window.
+enable_applause: true # enables applause button on blog posts
 
 # -----------------------------------------------------------------------------
 # Library versions

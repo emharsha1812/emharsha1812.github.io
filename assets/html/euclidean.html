@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: #f0f0f0;
+        font-family: sans-serif;
+      }
+      canvas {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+      }
+      .controls {
+        background: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+      input[type="range"] {
+        width: 200px;
+        vertical-align: middle;
+      }
+      .hint {
+        color: #666;
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <label for="deltaSlider">Neighborhood Size: </label>
+      <input
+        type="range"
+        id="deltaSlider"
+        min="0.05"
+        max="1.0"
+        step="0.01"
+        value="0.4"
+      />
+      <div class="hint">
+        Move mouse to rotate &bull; Use slider to change arc length
+      </div>
+    </div>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const slider = document.getElementById("deltaSlider");
+
+      const cx = canvas.width / 2;
+      const cy = canvas.height / 2;
+      const radius = 150;
+
+      // State variables
+      let currentAngle = Math.PI / 4; // Start at 45 degrees
+      let delta = parseFloat(slider.value);
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 1. Draw the main Circle
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = "#ddd";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Calculate geometry for the selected point
+        const px = cx + Math.cos(currentAngle) * radius;
+        const py = cy + Math.sin(currentAngle) * radius;
+
+        // 2. Draw the Neighborhood Arc (Blue)
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, currentAngle - delta, currentAngle + delta);
+        ctx.strokeStyle = "#007bff";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // 3. Draw the Tangent Line (Green) - The "Straightened String"
+        const tx = -Math.sin(currentAngle);
+        const ty = Math.cos(currentAngle);
+
+        const arcLength = radius * (delta * 2);
+        const halfLen = arcLength / 2;
+
+        const x1 = px - tx * halfLen;
+        const y1 = py - ty * halfLen;
+        const x2 = px + tx * halfLen;
+        const y2 = py + ty * halfLen;
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.strokeStyle = "#28a745";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // 4. Draw Mapping Lines (Dashed)
+        ctx.setLineDash([5, 5]);
+        ctx.strokeStyle = "#999";
+        ctx.lineWidth = 1;
+
+        // Start point mapping
+        const ax1 = cx + Math.cos(currentAngle - delta) * radius;
+        const ay1 = cy + Math.sin(currentAngle - delta) * radius;
+        ctx.beginPath();
+        ctx.moveTo(ax1, ay1);
+        ctx.lineTo(x1, y1);
+        ctx.stroke();
+
+        // End point mapping
+        const ax2 = cx + Math.cos(currentAngle + delta) * radius;
+        const ay2 = cy + Math.sin(currentAngle + delta) * radius;
+        ctx.beginPath();
+        ctx.moveTo(ax2, ay2);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+
+        ctx.setLineDash([]);
+
+        // 5. Draw the central point
+        ctx.beginPath();
+        ctx.arc(px, py, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+      }
+
+      // --- Interaction Listeners ---
+
+      // Update angle on mouse move
+      canvas.addEventListener("mousemove", (e) => {
+        const rect = canvas.getBoundingClientRect();
+        const mx = e.clientX - rect.left;
+        const my = e.clientY - rect.top;
+        currentAngle = Math.atan2(my - cy, mx - cx);
+        draw();
+      });
+
+      // Update size on slider change
+      slider.addEventListener("input", (e) => {
+        delta = parseFloat(e.target.value);
+        draw();
+      });
+
+      // Initial draw
+      draw();
+    </script>
+  </body>
+</html>

@@ -88,6 +88,10 @@ layout: default
     </div>
   </article>
 
+  {% if site.enable_applause %}
+    {% include applause.liquid %}
+  {% endif %}
+
   {% if page.citation %}
     {% include citation.liquid %}
   {% endif %}

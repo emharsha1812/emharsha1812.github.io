@@ -3,7 +3,7 @@ layout: page
 permalink: /stats/
 title: stats
 description:
-nav: true
+nav: false
 nav_order: 4
 ---
 

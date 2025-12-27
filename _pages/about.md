@@ -2,14 +2,14 @@
 layout: about
 title: Harshwardhan
 permalink: /
-subtitle: Perpetual Learner
+subtitle: Advanced Data Scientist
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>ADS</p>
+    <p>Advanced Data Scientist</p>
     <p>ZS</p>
     <p>Bangalore, Karnataka</p>
 
@@ -19,7 +19,7 @@ social: true # includes social icons at the bottom of the page
 latest_posts: false # hide latest posts section on the about (home) page
 ---
 
-Hello! My name is **Harshwardhan Fartale**, and I am currently working as **Advanced Data Scientist** at **ZS** 
+Hello! I am **Harshwardhan Fartale**, an **Advanced Data Scientist** based in **Bangalore, India**. Currently, I work at **ZS**, focusing on **Machine Learning** and **Artificial Intelligence**.
 
 Previously, I served as:
 - **Machine Learning Engineer** at **Indian Institute of Science, Bangalore**
