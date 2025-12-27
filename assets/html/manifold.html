@@ -1,0 +1,748 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Locally Euclidean - 3D Sphere</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-family: sans-serif;
+      }
+      #info {
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        pointer-events: none;
+        z-index: 10;
+      }
+      #label-container {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #ddd;
+        pointer-events: none;
+      }
+      .label-item {
+        margin-bottom: 5px;
+      }
+      .color-box {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="info">
+      Click and drag to rotate the sphere.<br />
+      Notice how the curved patch maps to the flat plane.
+    </div>
+
+    <div id="label-container">
+      <div class="label-item">
+        <span class="color-box" style="background: #444"></span>Main Sphere
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="background: #0088ff"></span>Curved Patch
+        (Neighborhood)
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="background: #00ff00"></span>Projected
+        Flat Grid (Tangent Plane)
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="border: 1px dashed #888"></span>Mapping
+        connection
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+      let scene, camera, renderer, controls;
+      let mainSphere, markerPoint, tangentPlaneMesh;
+      let curvedLinesSegs, flatLinesSegs, mappingLinesSegs;
+
+      const SPHERE_RAD = 10;
+      // The fixed point on the sphere we are analyzing (using spherical coordinates)
+      const fixedPhi = Math.PI / 3; // Latitude-ish
+      const fixedTheta = Math.PI / 4; // Longitude-ish
+
+      init();
+      animate();
+
+      function init() {
+        // 1. Setup Scene, Camera, Renderer
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x222222);
+
+        camera = new THREE.PerspectiveCamera(
+          45,
+          window.innerWidth / window.innerHeight,
+          1,
+          1000
+        );
+        camera.position.set(0, 20, 40);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enablePan = false;
+        controls.minDistance = 20;
+        controls.maxDistance = 80;
+
+        // 2. Lighting
+        const ambientLight = new THREE.AmbientLight(0x555555);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(10, 20, 10);
+        scene.add(directionalLight);
+
+        // 3. Create Main Objects
+
+        // The Main Sphere (Wireframe for visibility)
+        const sphereGeo = new THREE.SphereGeometry(SPHERE_RAD, 32, 24);
+        const sphereMat = new THREE.MeshBasicMaterial({
+          color: 0x444444,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.3,
+        });
+        mainSphere = new THREE.Mesh(sphereGeo, sphereMat);
+        scene.add(mainSphere);
+
+        // Calculate position of our fixed point P on the sphere
+        const pointP = new THREE.Vector3().setFromSphericalCoords(
+          SPHERE_RAD,
+          fixedPhi,
+          fixedTheta
+        );
+
+        // The Red Marker Point P
+        markerPoint = new THREE.Mesh(
+          new THREE.SphereGeometry(0.3, 16, 16),
+          new THREE.MeshBasicMaterial({ color: 0xff0000 })
+        );
+        markerPoint.position.copy(pointP);
+        scene.add(markerPoint);
+
+        // The Tangent Plane (Green, semi-transparent)
+        const planeGeo = new THREE.PlaneGeometry(
+          SPHERE_RAD * 0.8,
+          SPHERE_RAD * 0.8
+        );
+        const planeMat = new THREE.MeshPhongMaterial({
+          color: 0x00ff00,
+          transparent: true,
+          opacity: 0.2,
+          side: THREE.DoubleSide,
+          shininess: 100,
+        });
+        tangentPlaneMesh = new THREE.Mesh(planeGeo, planeMat);
+        // Position at P
+        tangentPlaneMesh.position.copy(pointP);
+        // Orient: look away from the center of the sphere, through P
+        tangentPlaneMesh.lookAt(pointP.clone().multiplyScalar(2));
+        scene.add(tangentPlaneMesh);
+
+        // 4. Initialize Line Geometries for the visualizations
+        // We use LineSegments for better performance when drawing many disconnected lines
+        curvedLinesSegs = createLineSegments(0x0088ff, false); // Blue for curved
+        flatLinesSegs = createLineSegments(0x00ff00, false); // Green for flat
+        mappingLinesSegs = createLineSegments(0x888888, true); // Grey dashed for mapping
+
+        scene.add(curvedLinesSegs);
+        scene.add(flatLinesSegs);
+        scene.add(mappingLinesSegs);
+
+        // 5. Generate the grid data once
+        generateGrids(pointP);
+
+        window.addEventListener("resize", onWindowResize);
+      }
+
+      function createLineSegments(color, dashed) {
+        const geometry = new THREE.BufferGeometry();
+        // Initial small buffer, will resize dynamically
+        geometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(new Float32Array(200 * 3), 3)
+        );
+
+        let material;
+        if (dashed) {
+          material = new THREE.LineDashedMaterial({
+            color: color,
+            dashSize: 0.5,
+            gapSize: 0.3,
+            opacity: 0.5,
+            transparent: true,
+          });
+        } else {
+          material = new THREE.LineBasicMaterial({
+            color: color,
+            linewidth: 2,
+          });
+        }
+
+        const segments = new THREE.LineSegments(geometry, material);
+        segments.frustumCulled = false; // ensure they don't disappear easily
+        return segments;
+      }
+
+      // This function calculates the grid points on the sphere and their projection on the plane
+      function generateGrids(centerPointP) {
+        const curvePositions = [];
+        const flatPositions = [];
+        const mapPositions = [];
+
+        // Define grid size in spherical coordinates offsets
+        const gridSize = 4; // 4x4 grid around center
+        const step = 0.08; // Radians step size (the "neighborhood size")
+
+        const normalAtP = centerPointP.clone().normalize();
+
+        for (let i = -gridSize; i <= gridSize; i++) {
+          for (let j = -gridSize; j <= gridSize; j++) {
+            // --- 1. Calculate Point on Sphere (Curved) ---
+            const phi = fixedPhi + i * step;
+            const theta = fixedTheta + j * step;
+            const spherePointS = new THREE.Vector3().setFromSphericalCoords(
+              SPHERE_RAD,
+              phi,
+              theta
+            );
+
+            // --- 2. Calculate Projection onto Tangent Plane (Flat) ---
+            // A point S on the sphere is projected from the sphere center (0,0,0)
+            // onto the plane tangent at P.
+            // Formula for central projection: S_prime = S * (R / (S dot normalAtP))
+            const dotProd = spherePointS.dot(normalAtP);
+            const scaleFactor = SPHERE_RAD / dotProd;
+            const planePointSPrime = spherePointS
+              .clone()
+              .multiplyScalar(scaleFactor);
+
+            // --- 3. Create Grid Lines (drawing longitude/latitude style lines) ---
+
+            // Draw "horizontal" grid lines (varying theta, fixed phi)
+            if (j < gridSize) {
+              const nextTheta = fixedTheta + (j + 1) * step;
+              const nextSphereS = new THREE.Vector3().setFromSphericalCoords(
+                SPHERE_RAD,
+                phi,
+                nextTheta
+              );
+
+              const nextDot = nextSphereS.dot(normalAtP);
+              const nextScale = SPHERE_RAD / nextDot;
+              const nextPlaneSPrime = nextSphereS
+                .clone()
+                .multiplyScalar(nextScale);
+
+              curvePositions.push(
+                spherePointS.x,
+                spherePointS.y,
+                spherePointS.z
+              );
+              curvePositions.push(nextSphereS.x, nextSphereS.y, nextSphereS.z);
+
+              flatPositions.push(
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z
+              );
+              flatPositions.push(
+                nextPlaneSPrime.x,
+                nextPlaneSPrime.y,
+                nextPlaneSPrime.z
+              );
+            }
+
+            // Draw "vertical" grid lines (varying phi, fixed theta)
+            if (i < gridSize) {
+              const nextPhi = fixedPhi + (i + 1) * step;
+              const nextSphereSVertical =
+                new THREE.Vector3().setFromSphericalCoords(
+                  SPHERE_RAD,
+                  nextPhi,
+                  theta
+                );
+
+              const nextDotV = nextSphereSVertical.dot(normalAtP);
+              const nextScaleV = SPHERE_RAD / nextDotV;
+              const nextPlaneSPrimeVertical = nextSphereSVertical
+                .clone()
+                .multiplyScalar(nextScaleV);
+
+              curvePositions.push(
+                spherePointS.x,
+                spherePointS.y,
+                spherePointS.z
+              );
+              curvePositions.push(
+                nextSphereSVertical.x,
+                nextSphereSVertical.y,
+                nextSphereSVertical.z
+              );
+
+              flatPositions.push(
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z
+              );
+              flatPositions.push(
+                nextPlaneSPrimeVertical.x,
+                nextPlaneSPrimeVertical.y,
+                nextPlaneSPrimeVertical.z
+              );
+            }
+
+            // --- 4. Create Mapping Lines (Dashed connector) ---
+            // Connect the sphere point to its projected plane point
+            // Only draw these for the corners to avoid clutter
+            if (Math.abs(i) === gridSize && Math.abs(j) === gridSize) {
+              mapPositions.push(spherePointS.x, spherePointS.y, spherePointS.z);
+              mapPositions.push(
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z
+              );
+            }
+          }
+        }
+
+        updateBuffer(curvedLinesSegs, curvePositions);
+        updateBuffer(flatLinesSegs, flatPositions);
+        updateBuffer(mappingLinesSegs, mapPositions);
+        mappingLinesSegs.computeLineDistances(); // Required for dashed lines work
+      }
+
+      function updateBuffer(lineSegmentsObj, dataArray) {
+        const geometry = lineSegmentsObj.geometry;
+        // Resize buffer if needed
+        if (dataArray.length > geometry.attributes.position.array.length) {
+          geometry.setAttribute(
+            "position",
+            new THREE.BufferAttribute(new Float32Array(dataArray.length), 3)
+          );
+        }
+
+        geometry.attributes.position.array.set(dataArray);
+        geometry.attributes.position.count = dataArray.length / 3;
+        geometry.attributes.position.needsUpdate = true;
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Locally Euclidean - 3D Sphere with Slider</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: #000;
+        font-family: sans-serif;
+      }
+
+      #ui-container {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 10;
+        min-width: 300px;
+      }
+
+      #label-container {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #ddd;
+        pointer-events: none;
+        font-size: 14px;
+      }
+      .label-item {
+        margin-bottom: 5px;
+      }
+      .color-box {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      .hint {
+        font-size: 12px;
+        color: #555;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui-container">
+      <label for="sizeSlider"><b>Neighborhood Size</b></label>
+      <input
+        type="range"
+        id="sizeSlider"
+        min="0.01"
+        max="0.25"
+        step="0.01"
+        value="0.08"
+      />
+      <div class="hint">
+        Slide left to zoom in (flatter) &bull; Slide right to expand (curved)
+      </div>
+    </div>
+
+    <div id="label-container">
+      <div class="label-item">
+        <span class="color-box" style="background: #444"></span>Main Sphere
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="background: #0088ff"></span>Curved Patch
+        (Neighborhood)
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="background: #00ff00"></span>Projected
+        Flat Grid (Tangent Plane)
+      </div>
+      <div class="label-item">
+        <span class="color-box" style="border: 1px dashed #888"></span>Mapping
+        connection
+      </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+      import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+      let scene, camera, renderer, controls;
+      let mainSphere, markerPoint, tangentPlaneMesh;
+      let curvedLinesSegs, flatLinesSegs, mappingLinesSegs;
+
+      // Constants
+      const SPHERE_RAD = 10;
+      const fixedPhi = Math.PI / 3;
+      const fixedTheta = Math.PI / 4;
+      const GRID_COUNT = 4; // How many grid squares from center (4 means an 8x8 grid)
+
+      // Slider Element
+      const slider = document.getElementById("sizeSlider");
+
+      init();
+      animate();
+
+      function init() {
+        // 1. Setup Scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x222222);
+
+        camera = new THREE.PerspectiveCamera(
+          45,
+          window.innerWidth / window.innerHeight,
+          1,
+          1000
+        );
+        camera.position.set(0, 20, 40);
+
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enablePan = false;
+        controls.minDistance = 20;
+        controls.maxDistance = 80;
+
+        // 2. Lighting
+        const ambientLight = new THREE.AmbientLight(0x555555);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(10, 20, 10);
+        scene.add(directionalLight);
+
+        // 3. Main Objects
+        // Sphere
+        const sphereGeo = new THREE.SphereGeometry(SPHERE_RAD, 32, 24);
+        const sphereMat = new THREE.MeshBasicMaterial({
+          color: 0x444444,
+          wireframe: true,
+          transparent: true,
+          opacity: 0.2,
+        });
+        mainSphere = new THREE.Mesh(sphereGeo, sphereMat);
+        scene.add(mainSphere);
+
+        // Center Point P
+        const pointP = new THREE.Vector3().setFromSphericalCoords(
+          SPHERE_RAD,
+          fixedPhi,
+          fixedTheta
+        );
+        markerPoint = new THREE.Mesh(
+          new THREE.SphereGeometry(0.3, 16, 16),
+          new THREE.MeshBasicMaterial({ color: 0xff0000 })
+        );
+        markerPoint.position.copy(pointP);
+        scene.add(markerPoint);
+
+        // Tangent Plane
+        const planeGeo = new THREE.PlaneGeometry(SPHERE_RAD, SPHERE_RAD);
+        const planeMat = new THREE.MeshPhongMaterial({
+          color: 0x00ff00,
+          transparent: true,
+          opacity: 0.1,
+          side: THREE.DoubleSide,
+          depthWrite: false, // Helps transparency rendering
+        });
+        tangentPlaneMesh = new THREE.Mesh(planeGeo, planeMat);
+        tangentPlaneMesh.position.copy(pointP);
+        tangentPlaneMesh.lookAt(pointP.clone().multiplyScalar(2));
+        scene.add(tangentPlaneMesh);
+
+        // 4. Line Systems
+        curvedLinesSegs = createLineSegments(0x0088ff, false);
+        flatLinesSegs = createLineSegments(0x00ff00, false);
+        mappingLinesSegs = createLineSegments(0xaaaaaa, true);
+
+        scene.add(curvedLinesSegs);
+        scene.add(flatLinesSegs);
+        scene.add(mappingLinesSegs);
+
+        // 5. Initial Generation
+        generateGrids(parseFloat(slider.value));
+
+        // 6. Listeners
+        window.addEventListener("resize", onWindowResize);
+
+        slider.addEventListener("input", (e) => {
+          const val = parseFloat(e.target.value);
+          generateGrids(val);
+        });
+      }
+
+      function createLineSegments(color, dashed) {
+        const geometry = new THREE.BufferGeometry();
+        // Pre-allocate a buffer (enough for max slider size)
+        const maxPoints = 5000;
+        geometry.setAttribute(
+          "position",
+          new THREE.BufferAttribute(new Float32Array(maxPoints * 3), 3)
+        );
+
+        let material;
+        if (dashed) {
+          material = new THREE.LineDashedMaterial({
+            color: color,
+            dashSize: 0.2,
+            gapSize: 0.2,
+            opacity: 0.6,
+            transparent: true,
+          });
+        } else {
+          material = new THREE.LineBasicMaterial({ color: color });
+        }
+
+        const segments = new THREE.LineSegments(geometry, material);
+        segments.frustumCulled = false;
+        return segments;
+      }
+
+      function generateGrids(stepSize) {
+        const curvePositions = [];
+        const flatPositions = [];
+        const mapPositions = [];
+
+        const pointP = markerPoint.position;
+        const normalAtP = pointP.clone().normalize();
+
+        // Iterate grid
+        for (let i = -GRID_COUNT; i <= GRID_COUNT; i++) {
+          for (let j = -GRID_COUNT; j <= GRID_COUNT; j++) {
+            // Current point (i, j)
+            const phi = fixedPhi + i * stepSize;
+            const theta = fixedTheta + j * stepSize;
+            const spherePointS = new THREE.Vector3().setFromSphericalCoords(
+              SPHERE_RAD,
+              phi,
+              theta
+            );
+
+            // Project S onto Plane -> S'
+            const dotProd = spherePointS.dot(normalAtP);
+            const scaleFactor = SPHERE_RAD / dotProd;
+            const planePointSPrime = spherePointS
+              .clone()
+              .multiplyScalar(scaleFactor);
+
+            // -- Horizontal Lines (varying Theta) --
+            if (j < GRID_COUNT) {
+              const nextTheta = fixedTheta + (j + 1) * stepSize;
+              const nextS = new THREE.Vector3().setFromSphericalCoords(
+                SPHERE_RAD,
+                phi,
+                nextTheta
+              );
+
+              const nextDot = nextS.dot(normalAtP);
+              const nextScale = SPHERE_RAD / nextDot;
+              const nextSPrime = nextS.clone().multiplyScalar(nextScale);
+
+              curvePositions.push(
+                spherePointS.x,
+                spherePointS.y,
+                spherePointS.z,
+                nextS.x,
+                nextS.y,
+                nextS.z
+              );
+              flatPositions.push(
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z,
+                nextSPrime.x,
+                nextSPrime.y,
+                nextSPrime.z
+              );
+            }
+
+            // -- Vertical Lines (varying Phi) --
+            if (i < GRID_COUNT) {
+              const nextPhi = fixedPhi + (i + 1) * stepSize;
+              const nextSV = new THREE.Vector3().setFromSphericalCoords(
+                SPHERE_RAD,
+                nextPhi,
+                theta
+              );
+
+              const nextDotV = nextSV.dot(normalAtP);
+              const nextScaleV = SPHERE_RAD / nextDotV;
+              const nextSPrimeV = nextSV.clone().multiplyScalar(nextScaleV);
+
+              curvePositions.push(
+                spherePointS.x,
+                spherePointS.y,
+                spherePointS.z,
+                nextSV.x,
+                nextSV.y,
+                nextSV.z
+              );
+              flatPositions.push(
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z,
+                nextSPrimeV.x,
+                nextSPrimeV.y,
+                nextSPrimeV.z
+              );
+            }
+
+            // -- Mapping Lines (Dashed corners) --
+            // Only draw corners to reduce visual noise
+            if (Math.abs(i) === GRID_COUNT && Math.abs(j) === GRID_COUNT) {
+              mapPositions.push(
+                spherePointS.x,
+                spherePointS.y,
+                spherePointS.z,
+                planePointSPrime.x,
+                planePointSPrime.y,
+                planePointSPrime.z
+              );
+            }
+          }
+        }
+
+        updateBuffer(curvedLinesSegs, curvePositions);
+        updateBuffer(flatLinesSegs, flatPositions);
+        updateBuffer(mappingLinesSegs, mapPositions);
+        mappingLinesSegs.computeLineDistances();
+      }
+
+      function updateBuffer(lineSegmentsObj, dataArray) {
+        const geometry = lineSegmentsObj.geometry;
+        geometry.setDrawRange(0, dataArray.length / 3);
+
+        // Safety check if buffer needs resize (though pre-allocation usually handles it)
+        if (dataArray.length > geometry.attributes.position.array.length) {
+          const newArr = new Float32Array(dataArray.length + 1000);
+          newArr.set(geometry.attributes.position.array);
+          geometry.setAttribute(
+            "position",
+            new THREE.BufferAttribute(newArr, 3)
+          );
+        }
+
+        const posAttr = geometry.attributes.position;
+        // We update the existing array values
+        for (let i = 0; i < dataArray.length; i++) {
+          posAttr.array[i] = dataArray[i];
+        }
+
+        posAttr.needsUpdate = true;
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+    </script>
+  </body>
+</html>
