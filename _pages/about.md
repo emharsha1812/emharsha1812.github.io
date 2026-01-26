@@ -31,9 +31,9 @@ I earned my **Bachelor of Technology in Electrical Engineering** from the **Nati
 ---
 
 ## **Research Interests**
-I am deeply passionate about **Machine Learning and Artificial Intelligence**, with a particular focus on the **Mechanistic Interpretability of Large Language Models**. My research aims to understand how these models process information and make decisions at a fundamental level.
+I am deeply passionate about **Machine Learning and Artificial Intelligence**. I am primarily interested in **Building Agents**, **Kernels for GPU Optimization** and **Post Training Large Language Models**.
 
-I am actively seeking **collaborative opportunities** with fellow researchers and practitioners who share similar interests in mechanistic interpretability and are excited to explore innovative approaches in this rapidly evolving field.
+I am actively seeking **collaborative opportunities** with fellow researchers and practitioners who share similar interests in **these areas** and are excited to explore innovative approaches in this rapidly evolving field.
 
 ---
 
@@ -46,7 +46,8 @@ In my free time, I enjoy:
 
 I also:
 - Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
-- Regularly solve [**LeetCode problems**](https://leetcode.com/u/harshwardhanfartale_nith/) & or [**Project Euler**](https://projecteuler.net/)
+- Regularly contribute kernel questions to **LeetGPU**
+- Regularly solve [**Project Euler**](https://projecteuler.net/) problems
 - Collaborate with research scholars on academic papers and technical articles
 
 ---
