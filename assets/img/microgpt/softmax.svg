@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+  <defs>
+    <style>
+      .bar-container { fill: #f0f4f8; stroke: #333; }
+      .bar { fill: #3498db; }
+      .bar-exp { fill: #e67e22; }
+      .bar-prob { fill: #2ecc71; }
+      .arrow { stroke: #333; stroke-width: 2; marker-end: url(#arrowhead); }
+      .text { font-family: sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+      .label { font-size: 12px; fill: #666; text-anchor: middle; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Logits -->
+  <text x="80" y="30" class="text" font-weight="bold">Logits</text>
+  <text x="80" y="50" class="label">Raw Scores</text>
+  
+  <rect x="40" y="150" width="20" height="50" class="bar" /> <!-- 2.0 -->
+  <text x="50" y="145" class="text">2.0</text>
+  
+  <rect x="70" y="180" width="20" height="20" class="bar" /> <!-- 1.0 -->
+  <text x="80" y="175" class="text">1.0</text>
+  
+  <rect x="100" y="195" width="20" height="5" class="bar" /> <!-- 0.1 -->
+  <text x="110" y="190" class="text">0.1</text>
+  
+  <line x1="40" y1="200" x2="120" y2="200" stroke="#333" stroke-width="2"/>
+
+  <!-- Arrow Exp -->
+  <line x1="140" y1="125" x2="190" y2="125" class="arrow" />
+  <text x="165" y="115" class="label">exp()</text>
+
+  <!-- Exponentials -->
+  <text x="250" y="30" class="text" font-weight="bold">Exponentials</text>
+  <text x="250" y="50" class="label">Non-negative</text>
+
+  <rect x="210" y="80" width="20" height="120" class="bar-exp" /> <!-- 7.39 -->
+  <text x="220" y="75" class="text">7.4</text>
+  
+  <rect x="240" y="173" width="20" height="27" class="bar-exp" /> <!-- 2.7 -->
+  <text x="250" y="168" class="text">2.7</text>
+  
+  <rect x="270" y="190" width="20" height="10" class="bar-exp" /> <!-- 1.1 -->
+  <text x="280" y="185" class="text">1.1</text>
+
+  <line x1="210" y1="200" x2="290" y2="200" stroke="#333" stroke-width="2"/>
+
+  <!-- Arrow Normalize -->
+  <line x1="310" y1="125" x2="360" y2="125" class="arrow" />
+  <text x="335" y="115" class="label">/ sum()</text>
+
+  <!-- Probabilities -->
+  <text x="450" y="30" class="text" font-weight="bold">Probabilities</text>
+  <text x="450" y="50" class="label">Sum to 1.0</text>
+  
+  <rect x="410" y="100" width="20" height="100" class="bar-prob" /> <!-- ~0.7 -->
+  <text x="420" y="95" class="text">0.66</text>
+  
+  <rect x="440" y="160" width="20" height="40" class="bar-prob" /> <!-- ~0.24 -->
+  <text x="450" y="155" class="text">0.24</text>
+  
+  <rect x="470" y="185" width="20" height="15" class="bar-prob" /> <!-- ~0.1 -->
+  <text x="480" y="180" class="text">0.10</text>
+
+  <line x1="410" y1="200" x2="490" y2="200" stroke="#333" stroke-width="2"/>
+
+  <text x="550" y="125" class="text" fill="#666" font-style="italic">"Winner takes all"</text>
+</svg>
