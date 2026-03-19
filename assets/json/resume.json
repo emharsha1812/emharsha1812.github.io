@@ -37,15 +37,27 @@
   },
   "work": [
     {
+      "name": "ZS",
+      "position": "Advanced Data Science Associate",
+      "startDate": "2025-10",
+      "endDate": "Present",
+      "summary": "Building GenAI based healthcare solutions for pharma.",
+      "highlights": [
+        "Building GenAI based healthcare solutions for pharma",
+        "Technologies: GenAI, healthcare AI workflows, Python"
+      ]
+    },
+    {
       "name": "DRDO & Indian Institute of Science, Bangalore",
       "position": "Predoc Associate",
       "startDate": "2024-07",
-      "endDate": "Present",
-      "summary": "Working on ML systems for combat aircraft applications and SciML research at AiREX lab under Prof. Sashikumaar Ganesan.",
+      "endDate": "2025-09",
+      "summary": "Worked on ML systems for combat aircraft applications and SciML research at AiREX lab under Prof. Sashikumaar Ganesan.",
       "highlights": [
-        "Developed ML systems for CASDIC’s combat aircraft applications",
-        "Evaluated fine-tuned IBM Granite & Gemma models for SciML via Graph-RAG, achieving SOTA results",
-        "Led Open Source Projects PULSE & SciREX"
+        "Developed low level C++ components to integrate ML models for CASDIC's combat aircraft hardware for low-latency inference",
+        "Evaluated fine-tuned IBM Granite & Gemma models for SciML using a custom Graph-RAG pipeline, achieving SOTA accuracy on benchmark datasets",
+        "Led open source projects PULSE & SciREX at AiREX under Professor Sashikumaar Ganesan",
+        "Technologies: C++, IBM Granite, Gemma, Graph-RAG, SciML"
       ]
     },
     {
@@ -55,8 +67,10 @@
       "endDate": "2024-06",
       "summary": "Worked on fraud detection models and graph-based pipelines.",
       "highlights": [
-        "Built high-performance fraud detection model with best abuse detection rate",
-        "Developed fraud pipeline using Memgraph, Neo4j, and Cypher"
+        "Designed and implemented a high-performance statistical model for fraudulent transaction prediction, achieving the highest abuse detection rate",
+        "Spearheaded end-to-end development of a fraud detection pipeline using graph database technologies (Memgraph, Neo4j, Cypher)",
+        "Built and optimized SQL queries to aggregate features from relational databases, improving training data quality for fraud detection models",
+        "Technologies: Python, SQL, Memgraph, Neo4j, Cypher"
       ]
     },
     {
@@ -66,8 +80,9 @@
       "endDate": "2023-06",
       "summary": "Contributed to documentation and technical blogs for privacy-preserving ML.",
       "highlights": [
-        "Improved tutorials and user docs for differential privacy",
-        "Published blogs/articles on federated learning, boosting adoption"
+        "Collaborated with the writing team to improve existing documentation and beginner tutorials in differential privacy",
+        "Published blog posts on federated learning and privacy-preserving machine learning, resulting in increased product adoption",
+        "Technologies: Differential privacy, federated learning, technical writing"
       ]
     },
     {
@@ -77,8 +92,9 @@
       "endDate": "2023-07",
       "summary": "Developed ML models for financial forecasting.",
       "highlights": [
-        "Predicted stock prices (85% accuracy) using Python & market/news data",
-        "Enhanced accuracy by 25% via feature engineering & time series analysis"
+        "Developed ML models for stock-price prediction using Python, achieving 85% accuracy by incorporating news and market data",
+        "Implemented time-series analysis and feature engineering, boosting model accuracy by 25%",
+        "Technologies: Python, time-series modeling, feature engineering"
       ]
     }
   ],
@@ -92,6 +108,33 @@
       "score": "8.56 CGPI"
     }
   ],
+  "publications": [
+    {
+      "name": "The Evolution of FlashAttention",
+      "publisher": "ICLR Blog Post Track 2026",
+      "releaseDate": "2026"
+    },
+    {
+      "name": "Can Linguistically Related Languages Guide LLM Translation in Low-Resource Settings?",
+      "publisher": "LoResMT 2026: EACL 2026 Workshop",
+      "releaseDate": "2026"
+    },
+    {
+      "name": "Disentangling Recall and Reasoning in Transformer Models through Layer-wise Attention and Activation Analysis",
+      "publisher": "AAAI XAI4Science Workshop 2026",
+      "releaseDate": "2026"
+    },
+    {
+      "name": "RADAR: Mechanistic Pathways for Detecting Data Contamination in LLM Evaluation",
+      "publisher": "NeurIPS 2025 LLM Evaluation Workshop",
+      "releaseDate": "2025-09"
+    },
+    {
+      "name": "Equilibrium Dynamics and Mitigation of Gender Bias in Synthetically Generated Data Evaluation",
+      "publisher": "AAAI Workshop on Shaping Responsible Synthetic Data in the Era of Foundation Models",
+      "releaseDate": "2025"
+    }
+  ],
   "projects": [
     {
       "name": "AIFred – Secure, Local AI Coding Assistant",
@@ -99,20 +142,21 @@
       "startDate": "2025-03",
       "endDate": "Present",
       "highlights": [
-        "Developed fully local AI pipeline using Ollama & NVIDIA NeMo",
-        "Voice-command interface for secure offline querying",
-        "Electron overlay UI for seamless workflow",
-        "Technologies: Python (FastAPI, NeMo, pydub), Electron, Ollama API"
+        "Launched AIFred: a desktop coding assistant with real-time AI and 100% data privacy via a local AI pipeline (Ollama for LLM and NVIDIA NeMo for ASR)",
+        "Built an entirely on-device voice command interface for secure offline querying",
+        "Optimized for low latency by architecting a fully local AI pipeline and shipped an Electron overlay UI for seamless coding workflows",
+        "Technologies: Python (FastAPI, NeMo, pydub), JavaScript (Electron), Ollama API"
       ],
       "url": "https://github.com/emharsha1812/Alfred"
     },
     {
-      "name": "Document Tampering Detection",
+      "name": "Document Tampering Detection using YOLOv8",
       "summary": "Forgery detection system using YOLOv8 and Streamlit.",
       "highlights": [
-        "YOLOv8 model detecting overwriting, scribbling, whitener use",
-        "Custom dataset of 600+ document images",
-        "Streamlit UI for upload & tampering visualization"
+        "Developed a forgery-detection system with YOLOv8 to identify overwriting, scribbling, and whitener use",
+        "Built a dataset of 600+ document images for robust detection",
+        "Designed a Streamlit interface for document upload, tampering visualization, and detailed digital-forgery analysis",
+        "Technologies: Python, Streamlit, OpenCV, YOLOv8"
       ],
       "url": "https://github.com/emharsha1812/Datathon-webapp"
     },
@@ -120,9 +164,10 @@
       "name": "Fundus AI",
       "summary": "AI-powered ophthalmic disease detection solution.",
       "highlights": [
-        "Detected Diabetic Retinopathy, Cataract, Glaucoma, ARMD",
-        "Built deep learning smartphone app for screening",
-        "3D-printed Tinkercad accessory for fundus imaging"
+        "Developed an end-to-end solution to detect ophthalmic and systemic diseases such as Diabetic & Hypertensive Retinopathy, Cataract, Glaucoma, and ARMD",
+        "Built a deep-learning smartphone app for accessible ophthalmic screening",
+        "Designed a 3D-printed Tinkercad-based accessory for high-quality fundus image capture",
+        "Technologies: Python, Keras, TensorFlow, Flutter, Tinkercad"
       ],
       "url": "https://github.com/emharsha1812/FundusAI"
     }
@@ -130,23 +175,19 @@
   "skills": [
     {
       "name": "Programming Languages",
-      "keywords": ["Python", "C++", "Triton", "SQL"]
+      "keywords": ["Python", "C++", "SQL", "Triton"]
     },
     {
-      "name": "ML & Deep Learning",
-      "keywords": ["NumPy", "pandas", "Matplotlib", "Scikit-learn", "JAX", "spaCy", "OpenCV", "TensorFlow", "PyTorch", "PySyft"]
+      "name": "ML & GenAI",
+      "keywords": ["PyTorch", "Scikit-learn"]
     },
     {
-      "name": "Large Language Models",
-      "keywords": ["Huggingface", "Ollama"]
+      "name": "Data & MLOps",
+      "keywords": ["Neo4j", "Memgraph", "Cypher", "Docker", "Kubernetes"]
     },
     {
-      "name": "Databases & Query Languages",
-      "keywords": ["Neo4j", "Memgraph", "Cypher"]
-    },
-    {
-      "name": "Tools & Platforms",
-      "keywords": ["Docker", "Kubernetes", "LaTeX", "MATLAB", "Linux Kernel", "Google Cloud Platform", "Firebase", "Adobe Illustrator"]
+      "name": "Frameworks & Platforms",
+      "keywords": ["FastAPI", "Streamlit", "Linux", "Google Cloud Platform", "LaTeX"]
     },
     {
       "name": "Technical Writing",
@@ -162,11 +203,18 @@
   ],
   "volunteer": [
     {
+      "organization": "IISc Bangalore",
+      "position": "Teaching Assistant",
+      "startDate": "2025-07",
+      "endDate": "2025-09",
+      "summary": "DS-246, Generative & Agentic AI in Practice. Delivered lectures and tutorials, led doubt sessions, and was responsible for developing and grading assessments."
+    },
+    {
       "organization": "DRDO Industry Academia Centres of Excellence (DIA-CoEs)",
       "position": "Machine Learning & Data Science Trainer",
       "startDate": "2025-01",
       "endDate": "2025-01",
-      "summary": "Conducted ML & Data Science training for DRDO Scientists."
+      "summary": "Designed & delivered a 3-day training module to DRDO scientists, focusing on foundational Machine Learning and core data science tools."
     }
   ]
 }

@@ -133,6 +133,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: Knowledge Base # blog_name will be displayed in your blog page
 blog_description: Resources for learning and development # blog_description will be displayed in your blog page
+future: true # display future-dated posts
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 enable_blog_viewing: true # enable page views on blog posts
