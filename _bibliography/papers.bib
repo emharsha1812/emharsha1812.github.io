@@ -1,36 +1,97 @@
 
+@article{fartale2023differentialprivacy,
+      title={A Survey of Differential Privacy Frameworks},
+      author={Harshwardhan Fartale},
+      year={2023},
+      journal={OpenMined Blog},
+      url={https://openmined.org/blog/a-survey-of-differential-privacy-frameworks/},
+      html={https://openmined.org/blog/a-survey-of-differential-privacy-frameworks/},
+      abstract={A comprehensive survey of differential privacy and major frameworks implementing it, including Google's DP Libraries, PyTorch Opacus, SecretFlow, IBM Diffprivlib, TensorFlow Privacy, OpenDP, and PyDP. Covers local vs global differential privacy approaches and their trade-offs for machine learning and statistical analysis applications.},
+      selected={true}
+}
+
+@misc{fartale2025neurosymbolic,
+      title={Enhancing Logical Consistency in Language Models through Neuro-Symbolic Feedback and Structured Reasoning},
+      author={Harshwardhan Fartale and Ashish Kattamuri and Rahul Raja and Arpita Vats and Ishita Prasad and Akshata Kishore Moharir},
+      year={2025},
+      abstract={We propose a neuro-symbolic feedback framework for improving logical consistency in large language models through structured reasoning. The approach integrates symbolic reasoning constraints with neural model outputs to mitigate logical contradictions in generated text.},
+      selected={true},
+      note={Accepted at AAAI 2026 Workshop on Logical and Symbolic Reasoning in Language Models}
+}
+
+@misc{ramasethu2026linguistically,
+      title={Can Linguistically Related Languages Guide LLM Translation in Low-Resource Settings?},
+      author={Aishwarya Ramasethu and Rohin Garg and Niyathi Allu and Harshwardhan Fartale and Dun Li Chan},
+      year={2026},
+      eprint={2603.16660},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2603.16660},
+      html={https://arxiv.org/abs/2603.16660},
+      pdf={https://arxiv.org/pdf/2603.16660},
+      arxiv={2603.16660},
+      abstract={We examine whether linguistically similar languages can help large language models translate underrepresented languages effectively, using pivot-based prompting with related languages and few-shot examples — without any parameter updates. Results show that pivot-based prompting yields improvements in certain configurations, particularly when the target language is less well represented, though gains are inconsistent for closely related language varieties. The work provides practical guidance on when inference-time prompting serves as a viable lightweight alternative to fine-tuning in low-resource translation.},
+      selected={true},
+      note={Accepted at LoResMT 2026: EACL 2026 Workshop on Technologies for Machine Translation of Low-Resource Languages}
+}
+
 @misc{fartale2025disentanglingrecallreasoningtransformer,
-      title={Disentangling Recall and Reasoning in Transformer Models through Layer-wise Attention and Activation Analysis}, 
+      title={Disentangling Recall and Reasoning in Transformer Models through Layer-wise Attention and Activation Analysis},
       author={Harshwardhan Fartale and Ashish Kattamuri and Rahul Raja and Arpita Vats and Ishita Prasad and Akshata Kishore Moharir},
       year={2025},
       eprint={2510.03366},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2510.03366},
+      html={https://arxiv.org/abs/2510.03366},
+      pdf={https://arxiv.org/pdf/2510.03366},
+      arxiv={2510.03366},
+      abstract={This research investigates whether transformer language models use distinct internal mechanisms for fact retrieval and logical inference. Using mechanistic interpretability techniques on models from the Qwen and LLaMA families, we employ activation patching and structured ablations to measure how specific model components contribute to each task. We find that distinct layers and attention heads lead to selective impairments — disabling recall circuits reduces fact accuracy by ~15% while preserving reasoning abilities, and vice versa. At the neuron level, task-specific activation patterns are observed, though with less robust effects. The work provides evidence that these two cognitive functions rely on separable but interacting circuits within transformer architectures.},
       preview={recall-cover.png},
-      note={Accepted at AAAI 2026 XAI4Science Workshop} 
+      selected={true},
+      note={Accepted at AAAI 2026 XAI4Science Workshop}
 }
 
 @misc{kattamuri2025radarmechanisticpathwaysdetecting,
-      title={RADAR: Mechanistic Pathways for Detecting Data Contamination in LLM Evaluation}, 
+      title={RADAR: Mechanistic Pathways for Detecting Data Contamination in LLM Evaluation},
       author={Ashish Kattamuri and Harshwardhan Fartale and Arpita Vats and Rahul Raja and Ishita Prasad},
       year={2025},
       eprint={2510.08931},
       archivePrefix={arXiv},
       primaryClass={cs.AI},
       url={https://arxiv.org/abs/2510.08931},
+      html={https://arxiv.org/abs/2510.08931},
+      pdf={https://arxiv.org/pdf/2510.08931},
+      arxiv={2510.08931},
+      abstract={We present RADAR, a framework that uses mechanistic interpretability to identify contaminated evaluation datasets for large language models — distinguishing genuine reasoning from memorized training data. The system extracts 37 features including surface-level confidence trajectories and deep mechanistic properties such as attention specialization, circuit dynamics, and activation flow patterns. An ensemble classifier achieves 93% overall accuracy, perfect accuracy on unambiguous cases, and 76.7% on challenging borderline examples. Rather than relying on traditional surface-level metrics, RADAR demonstrates how deep mechanistic analysis of model activation patterns and circuit dynamics can reveal whether strong performance stems from authentic reasoning or dataset memorization.},
       preview={radar-cover.png},
+      selected={true},
       note={Accepted at NeurIPS 2025 LLM Evaluation Workshop Poster}
 }
 
 @misc{kattamuri2025equilibriumdynamicsmitigationgender,
-      title={Equilibrium Dynamics and Mitigation of Gender Bias in Synthetically Generated Data}, 
+      title={Equilibrium Dynamics and Mitigation of Gender Bias in Synthetically Generated Data},
       author={Ashish Kattamuri and Arpita Vats and Harshwardhan Fartale and Rahul Raja and Akshata Kishore Moharir and Ishita Prasad},
       year={2025},
       eprint={2511.10689},
       archivePrefix={arXiv},
       primaryClass={cs.CL},
       url={https://arxiv.org/abs/2511.10689},
+      html={https://arxiv.org/abs/2511.10689},
+      pdf={https://arxiv.org/pdf/2511.10689},
+      arxiv={2511.10689},
+      abstract={We examine how gender bias evolves when large language models recursively generate synthetic datasets. Rather than consistent amplification, we discover equilibrium dynamics — biased data tends to converge toward the model's inherent bias levels. Contrastive augmentation (introducing gender-swapped text variants) achieves substantial fairness improvements in downstream tasks, despite producing higher semantic similarity bias scores. This disconnect suggests that traditional embedding-based metrics may not capture behavioral fairness outcomes, underscoring the importance of multifaceted evaluation approaches in responsible synthetic data creation.},
       preview={gender-cover.png},
-      note={Accepted at 2026 AAAI Workshop on Shaping Responsible Synthetic Data in the Era of Foundation Models}
+      selected={true},
+      note={Accepted at AAAI 2026 Workshop on Shaping Responsible Synthetic Data in the Era of Foundation Models}
+}
+
+@misc{fartale2026evolutionflashattention,
+      title={The Evolution of FlashAttention},
+      author={Harshwardhan Fartale},
+      year={2026},
+      website={https://iclr-blogposts.github.io/2026/blog/2026/the-evolution-of-flashattention/},
+      html={https://iclr-blogposts.github.io/2026/blog/2026/the-evolution-of-flashattention/},
+      note={Accepted in 2026 ICLR Blog Post Track},
+      selected={true}
 }

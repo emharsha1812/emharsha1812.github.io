@@ -1,3 +1,43 @@
+- id: godelescherbach
+  title: "Gödel, Escher, Bach: An Eternal Golden Braid"
+  author: "Douglas Hofstadter"
+  year: 1979
+  publisher: "Basic Books"
+  url: "https://www.goodreads.com/book/show/24113.Godel_Escher_Bach"
+  thumbnail: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1547125681i/24113.jpg"
+  category: non-technical
+- id: manwhowasnthere
+  title: "The Man Who Wasn't There: Investigations into the Strange New Science of the Self"
+  author: "Anil Ananthaswamy"
+  year: 2015
+  publisher: "Dutton"
+  url: "https://www.goodreads.com/book/show/23398718"
+  thumbnail: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1417983505i/23398718.jpg"
+  category: non-technical
+- id: whywedie
+  title: "Why We Die: The New Science of Aging and the Quest for Immortality"
+  author: "Venki Ramakrishnan"
+  year: 2024
+  publisher: "Doubleday"
+  url: "https://www.goodreads.com/book/show/179311316"
+  thumbnail: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1707407490i/179311316.jpg"
+  category: non-technical
+- id: emperorofmaladies
+  title: "The Emperor of All Maladies: A Biography of Cancer"
+  author: "Siddhartha Mukherjee"
+  year: 2010
+  publisher: "Scribner"
+  url: "https://www.goodreads.com/book/show/7170627-the-emperor-of-all-maladies"
+  thumbnail: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1280771091i/7170627.jpg"
+  category: non-technical
+- id: infinitymachine
+  title: "The Infinity Machine: Demis Hassabis, DeepMind and the Quest for Superintelligence"
+  author: "Sebastian Mallaby"
+  year: 2025
+  publisher: "Penguin Random House"
+  url: "https://www.goodreads.com/book/show/241434373"
+  thumbnail: "https://m.media-amazon.com/images/I/91GFUt436iL._UF1000,1000_QL80_.jpg"
+  category: non-technical
 - id: visionsystems
   title: "Deep Learning for Vision Systems"
   author: "Mohamed Elgendy"

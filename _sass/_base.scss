@@ -836,6 +836,75 @@ footer.sticky-bottom {
   }
 }
 
+.publications.journal-list {
+  ol.bibliography {
+    li {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--global-divider-color);
+
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      [id^='@'],
+      [id] {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .title {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 0.35rem;
+      }
+
+      .author {
+        margin-bottom: 0.35rem;
+      }
+
+      .periodical.journal-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.45rem;
+      }
+
+      .journal-abbr {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--global-theme-color);
+        color: $white-color;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .links {
+        a.btn {
+          border: none;
+          border-bottom: 1px solid transparent;
+          padding: 0;
+          margin-right: 0.9rem;
+          margin-bottom: 0.35rem;
+
+          &:hover {
+            border-bottom-color: var(--global-theme-color);
+          }
+        }
+      }
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+}
+
 // Rouge Color Customization
 figure.highlight {
   margin: 0 0 1rem;

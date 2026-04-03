@@ -1,7 +1,13 @@
 ---
 ---
 <div class="row">
-  {% if site.enable_publication_thumbnails %}
+  {% assign use_journal_publications = page.journal_publications | default: false %}
+  {% assign show_publication_thumbnails = site.enable_publication_thumbnails %}
+  {% if use_journal_publications %}
+    {% assign show_publication_thumbnails = false %}
+  {% endif %}
+
+  {% if show_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
@@ -45,7 +51,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if show_publication_thumbnails %}col-sm-8{% else %}col-sm-12{% endif %}">
     <!-- Title -->
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
@@ -175,12 +181,17 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
-    <div class="periodical">
-      {{ periodical | strip }}
+    <div class="periodical{% if use_journal_publications %} journal-meta{% endif %}">
+      {% if use_journal_publications and entry.abbr %}
+        <span class="journal-abbr badge rounded">{{ entry.abbr }}</span>
+      {% endif %}
+      <span>{{ periodical | strip }}</span>
     </div>
-    <div class="periodical">
-      {{ entry.note | strip }}
-    </div>
+    {% if entry.note %}
+      <div class="periodical">
+        {{ entry.note | strip }}
+      </div>
+    {% endif %}
 
     <!-- Links/Buttons -->
     <div class="links">
