@@ -146,6 +146,13 @@ related_blog_posts:
   enabled: true
   max_related: 5
 
+# Like button on posts (uses CountAPI — no setup needed, zero config)
+enable_post_likes: true
+
+# Cusdis comments (anonymous — visitors don't need an account)
+# Sign up free at https://cusdis.com, create a site, copy the App ID here.
+cusdis_app_id: 35563256-c91f-46dc-a0a8-2d45abd3cbff
+
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:

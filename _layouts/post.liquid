@@ -105,6 +105,14 @@ layout: default
     {% endif %}
   {% endif %}
 
+  {% if site.enable_post_likes %}
+    {% include post_likes.liquid %}
+  {% endif %}
+
+  {% if site.cusdis_app_id and site.cusdis_app_id != '' %}
+    {% include cusdis.liquid %}
+  {% endif %}
+
   {% if site.disqus_shortname and page.disqus_comments %}
     {% include disqus.liquid %}
   {% endif %}

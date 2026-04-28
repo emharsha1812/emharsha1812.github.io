@@ -1,0 +1,103 @@
+<style>
+  .post-likes-section {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 2rem 0 1.5rem;
+  }
+  .like-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    border: 2px solid var(--global-theme-color, #dc3545);
+    color: var(--global-theme-color, #dc3545);
+    border-radius: 2rem;
+    padding: 0.35rem 1.1rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+    user-select: none;
+  }
+  .like-btn:hover {
+    background: var(--global-theme-color, #dc3545);
+    color: #fff;
+  }
+  .like-btn.liked {
+    background: var(--global-theme-color, #dc3545);
+    color: #fff;
+    cursor: default;
+  }
+  @keyframes like-pop {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.35); }
+    70%  { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+  .like-btn .fa-heart.pop {
+    animation: like-pop 0.38s ease;
+  }
+  .like-label {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light, #888);
+  }
+</style>
+
+{% assign post_slug = page.url | slugify %}
+
+<div class="post-likes-section">
+  <button id="like-btn" class="like-btn" title="Like this post" aria-label="Like this post">
+    <i id="like-icon" class="fa-regular fa-thumbs-up"></i>
+    <span id="like-count">…</span>
+  </button>
+  <span class="like-label">likes</span>
+</div>
+
+<script>
+(function () {
+  var NAMESPACE = 'portfolio-emharsha1812';
+  var POST_KEY  = {{ post_slug | jsonify }};
+  var STORE_KEY = 'liked_' + POST_KEY;
+  var API_BASE  = 'https://api.countapi.xyz';
+
+  var btn   = document.getElementById('like-btn');
+  var icon  = document.getElementById('like-icon');
+  var count = document.getElementById('like-count');
+
+  function markLiked(animate) {
+    btn.classList.add('liked');
+    icon.classList.replace('fa-regular', 'fa-solid');
+    btn.setAttribute('title', 'You already liked this');
+    if (animate) {
+      icon.classList.add('pop');
+      icon.addEventListener('animationend', function () { icon.classList.remove('pop'); }, { once: true });
+    }
+  }
+
+  function fetchCount() {
+    fetch(API_BASE + '/get/' + NAMESPACE + '/' + POST_KEY)
+      .then(function (r) { return r.json(); })
+      .then(function (d) { count.textContent = typeof d.value === 'number' ? d.value : 0; })
+      .catch(function ()  { count.textContent = '—'; });
+  }
+
+  function handleLike() {
+    if (localStorage.getItem(STORE_KEY)) return;
+    fetch(API_BASE + '/hit/' + NAMESPACE + '/' + POST_KEY)
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (typeof d.value === 'number') count.textContent = d.value;
+        localStorage.setItem(STORE_KEY, '1');
+        markLiked(true);
+      })
+      .catch(function () {
+        localStorage.setItem(STORE_KEY, '1');
+        markLiked(true);
+      });
+  }
+
+  if (localStorage.getItem(STORE_KEY)) markLiked();
+  fetchCount();
+  btn.addEventListener('click', handleLike);
+})();
+</script>

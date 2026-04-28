@@ -1,0 +1,37 @@
+<style>
+  .post-comments-section {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--global-divider-color, #e0e0e0);
+  }
+  .post-comments-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<div class="post-comments-section">
+  <h2>Comments</h2>
+  <div id="cusdis_thread"
+    data-host="https://cusdis.com"
+    data-app-id="{{ site.cusdis_app_id }}"
+    data-page-id="{{ page.url }}"
+    data-page-url="{{ page.url | prepend: site.url }}"
+    data-page-title="{{ page.title }}"
+  ></div>
+  <script>
+    (function () {
+      function syncCusdisTheme() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark'
+                   || window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (window.CUSDIS && window.CUSDIS.setTheme) {
+          window.CUSDIS.setTheme(dark ? 'dark' : 'light');
+        }
+      }
+      window.addEventListener('load', syncCusdisTheme);
+      var observer = new MutationObserver(syncCusdisTheme);
+      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+  </script>
+  <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+</div>

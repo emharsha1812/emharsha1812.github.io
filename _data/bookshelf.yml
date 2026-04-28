@@ -1,3 +1,11 @@
+- id: nanobrain
+  title: "Nanobrain: The Making of an Artificial Brain from a Time Crystal"
+  author: "Anirban Bandyopadhyay"
+  year: 2020
+  publisher: "CRC Press"
+  url: "https://www.taylorfrancis.com/books/mono/10.1201/9780429107771/nanobrain-anirban-bandyopadhyay"
+  thumbnail: "https://images.tandf.co.uk/common/jackets/crclarge/978042910/9780429107771.jpg"
+  category: non-technical
 - id: godelescherbach
   title: "Gödel, Escher, Bach: An Eternal Golden Braid"
   author: "Douglas Hofstadter"
