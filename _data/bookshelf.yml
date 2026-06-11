@@ -46,6 +46,14 @@
   url: "https://www.goodreads.com/book/show/241434373"
   thumbnail: "https://m.media-amazon.com/images/I/91GFUt436iL._UF1000,1000_QL80_.jpg"
   category: non-technical
+- id: proofinthecode
+  title: "The Proof in the Code: How a Truth Machine Is Transforming Math and AI"
+  author: "Kevin Hartnett"
+  year: 2026
+  publisher: "Quanta Books"
+  url: "https://us.macmillan.com/books/9780374620059/theproofinthecode/"
+  thumbnail: "https://m.media-amazon.com/images/I/713OlbE9KuL._AC_UF1000,1000_QL80_.jpg"
+  category: non-technical
 - id: visionsystems
   title: "Deep Learning for Vision Systems"
   author: "Mohamed Elgendy"
