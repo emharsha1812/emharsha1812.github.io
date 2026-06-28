@@ -15,6 +15,9 @@ This is a living shelf for preparing for AI interviews in frontier labs, R&D tea
 - [ML Job Interviews: The Ultimate Guide](https://silviasapora.github.io/blog/ml-interviews.html)  
   A broad, practical guide to machine learning interview preparation.
 
+- [Surprising lessons from my research scientist job search](https://yongzx.github.io/blog/2026/06/24/job-search/)  
+  A firsthand write-up with useful lessons from a research scientist job search.
+
 - [RL Interview Questions](https://www.k-a.in/rl-algo.html)  
   Reinforcement learning questions and algorithm notes for research-style interview prep.
 
