@@ -13,6 +13,10 @@ layout: default
   article.post-content h2 { font-size: 1.45rem; margin-top: 1.6rem; }
   article.post-content h3 { font-size: 1.2rem;  margin-top: 1.2rem; }
   article.post-content h4 { font-size: 1.05rem; margin-top: 1rem; }
+  /* Keep MathJax inline math vertically centred inside headings */
+  article.post-content h1 mjx-container,
+  article.post-content h2 mjx-container,
+  article.post-content h3 mjx-container { vertical-align: middle; }
 </style>
 
 {% assign year = page.date | date: '%Y' %}
@@ -173,6 +177,45 @@ layout: default
     const checkboxes = document.querySelectorAll('.task-list-item-checkbox');
     checkboxes.forEach(checkbox => {
       checkbox.removeAttribute('disabled');
+    });
+  });
+</script>
+
+<!-- Convert GitHub-style callouts (> [!note], > [!tip], etc.) to al-folio styled blockquotes -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var calloutMap = {
+      note:      { cls: 'block-tip',     label: 'Note' },
+      tip:       { cls: 'block-tip',     label: 'Tip' },
+      example:   { cls: 'block-tip',     label: 'Example' },
+      warning:   { cls: 'block-warning', label: 'Warning' },
+      important: { cls: 'block-danger',  label: 'Important' },
+      danger:    { cls: 'block-danger',  label: 'Danger' },
+    };
+
+    document.querySelectorAll('article.post-content blockquote').forEach(function(bq) {
+      var firstP = bq.querySelector('p');
+      if (!firstP) return;
+      var html = firstP.innerHTML;
+      var m = html.match(/^\[!(\w+)\][ \t]*(.*?)(?:\n|<br\s*\/?>|$)/i);
+      if (!m) return;
+      var type = m[1].toLowerCase();
+      var titleText = m[2].trim();
+      var cfg = calloutMap[type];
+      if (!cfg) return;
+
+      bq.classList.add(cfg.cls);
+
+      var heading = document.createElement('p');
+      heading.innerHTML = '<strong>' + cfg.label + (titleText ? ': ' + titleText : '') + '</strong>';
+
+      var rest = html.replace(/^\[!\w+\][ \t]*.*?(\n|<br\s*\/?>|$)/i, '').trim();
+      if (rest) {
+        firstP.innerHTML = rest;
+        bq.insertBefore(heading, firstP);
+      } else {
+        firstP.replaceWith(heading);
+      }
     });
   });
 </script>

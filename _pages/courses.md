@@ -3,7 +3,7 @@ layout: page
 title: courses
 permalink: /courses/
 description: Structured courses and learning series.
-nav: true
+nav: false
 nav_order: 2
 ---
 
