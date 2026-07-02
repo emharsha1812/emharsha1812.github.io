@@ -8,11 +8,33 @@ layout: default
   ul.task-list input[type="checkbox"]:checked {
     accent-color: aqua !important;
   }
+  /* Scale down headings inside post body so H1 doesn't render at display size */
+  article.post-content h1 { font-size: 1.75rem; margin-top: 2rem; }
+  article.post-content h2 { font-size: 1.45rem; margin-top: 1.6rem; }
+  article.post-content h3 { font-size: 1.2rem;  margin-top: 1.2rem; }
+  article.post-content h4 { font-size: 1.05rem; margin-top: 1rem; }
 </style>
 
 {% assign year = page.date | date: '%Y' %}
 {% assign tags = page.tags | join: '' %}
 {% assign categories = page.categories | join: '' %}
+
+{% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "series_part" %}
+  {% assign series_total = series_posts | size %}
+  {% assign series_prev = nil %}
+  {% assign series_next = nil %}
+  {% assign series_found = false %}
+  {% for sp in series_posts %}
+    {% if sp.url == page.url %}
+      {% assign series_found = true %}
+    {% elsif series_found and series_next == nil %}
+      {% assign series_next = sp %}
+    {% elsif series_found == false %}
+      {% assign series_prev = sp %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% if page._styles %}
   <!-- Page/Post style -->
@@ -74,6 +96,13 @@ layout: default
         {% endfor %}
       {% endif %}
     </p>
+
+    {% if page.series %}
+      <p class="post-meta series-label" style="margin-top: 0.4rem;">
+        <i class="fa-solid fa-list-ol fa-sm"></i>
+        {% if page.series_title %}{{ page.series_title }} &mdash; {% endif %}Part {{ page.series_part }} of {{ series_total }}
+      </p>
+    {% endif %}
   </header>
 
   <article class="post-content">
@@ -87,6 +116,23 @@ layout: default
       {{ content }}
     </div>
   </article>
+
+  {% if page.series and series_total > 1 %}
+    <nav class="series-nav mt-4 pt-3" style="border-top: 1px solid var(--global-divider-color, #ddd);">
+      <div class="row">
+        <div class="col text-start">
+          {% if series_prev %}
+            <a href="{{ series_prev.url | relative_url }}">&larr; Part {{ series_prev.series_part }}: {{ series_prev.title }}</a>
+          {% endif %}
+        </div>
+        <div class="col text-end">
+          {% if series_next %}
+            <a href="{{ series_next.url | relative_url }}">Part {{ series_next.series_part }}: {{ series_next.title }} &rarr;</a>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  {% endif %}
 
   {% if page.citation %}
     {% include citation.liquid %}
