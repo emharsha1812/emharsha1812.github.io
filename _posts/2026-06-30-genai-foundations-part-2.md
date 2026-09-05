@@ -6,6 +6,8 @@ series: genai-foundations
 series_part: 2
 series_title: "Generative AI Foundations"
 series_description: "A ground-up course covering the math and modern generative AI."
+toc:
+  beginning: true
 description: "f-divergences, the Fenchel conjugate, and the classical GAN derived from first principles."
 tags: generative-ai, mathematics
 categories: courses

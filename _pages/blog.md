@@ -18,95 +18,58 @@ pagination:
 
 <div class="post">
 
-{% assign blog_name_size = site.blog_name | size %}
-{% assign blog_description_size = site.blog_description | size %}
-
-{% if blog_name_size > 0 or blog_description_size > 0 %}
-
-  <div class="header-bar">
-    <h1>{{ site.blog_name }}</h1>
-    <h2>{{ site.blog_description }}</h2>
-  </div>
-  {% endif %}
-
-{% if site.display_tags or site.display_categories %}
-
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
-      {% endif %}
-      {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
-
-{% assign featured_posts = site.posts | where: "featured", "true" %}
-{% if featured_posts.size > 0 %}
-<br>
-
-<div class="container featured-posts">
-{% assign is_even = featured_posts.size | modulo: 2 %}
-<div class="row row-cols-{% if featured_posts.size <= 2 or is_even == 0 %}2{% else %}3{% endif %}">
-{% for post in featured_posts %}
-<div class="col mb-4">
-<a href="{{ post.url | relative_url }}">
-<div class="card hoverable">
-<div class="row g-0">
-<div class="col-md-12">
-<div class="card-body">
-<div class="float-right">
-<i class="fa-solid fa-thumbtack fa-xs"></i>
-</div>
-<h3 class="card-title text-lowercase">{{ post.title }}</h3>
-<p class="card-text">{{ post.description }}</p>
-
-                    {% if post.external_source == blank %}
-                      {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-                    {% else %}
-                      {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-                    {% endif %}
-                    {% assign year = post.date | date: "%Y" %}
-
-                    <p class="post-meta">
-                      {{ read_time }} min read &nbsp; &middot; &nbsp;
-                      <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-                        <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
-      </div>
+{% assign course_posts = site.posts | where_exp: "post", "post.series" %}
+{% assign course_series = course_posts | map: "series" | uniq | sort %}
+{% if course_series.size > 0 and paginator.page == 1 %}
+  <section id="writing-courses" class="writing-courses mb-5" aria-labelledby="writing-courses-title">
+    <div class="d-flex align-items-baseline justify-content-between flex-wrap">
+      <h2 id="writing-courses-title">Courses</h2>
+      <a href="{{ '/courses/' | relative_url }}">View course index&nbsp; →</a>
     </div>
-    <hr>
-
+    <p class="text-muted">Structured learning series, separate from the one-off writings below.</p>
+    {% for series_name in course_series %}
+      {% assign series_posts = course_posts | where: "series", series_name | sort: "series_part" %}
+      {% assign first_post = series_posts | first %}
+      <article class="course-block mb-4">
+        <h3>{{ first_post.series_title | default: series_name }}</h3>
+        {% if first_post.series_description %}
+          <p>{{ first_post.series_description }}</p>
+        {% endif %}
+        <ol>
+          {% for post in series_posts %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.description %} <span class="text-muted">— {{ post.description }}</span>{% endif %}</li>
+          {% endfor %}
+        </ol>
+      </article>
+    {% endfor %}
+  </section>
 {% endif %}
 
-  <ul class="post-list">
+<p class="writing-external-links">You can find more of my writing on <a href="https://harshwardhanfartale.substack.com/" target="_blank" rel="noopener">Substack</a> and <a href="https://medium.com/@emharsha1812" target="_blank" rel="noopener">Medium</a>.</p>
+
+<form id="blog-search" class="blog-search" role="search">
+  <label for="blog-search-input" class="sr-only">Search writings</label>
+  <div class="blog-search-field">
+    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    <input id="blog-search-input" type="search" placeholder="Search writings..." autocomplete="off" spellcheck="false">
+  </div>
+  <p id="blog-search-status" class="text-muted" role="status" aria-live="polite"></p>
+</form>
+
+<style>
+.blog-search { margin: 1.25rem 0 2rem; }
+.blog-search-field { display: flex; align-items: center; gap: .75rem; padding: .7rem 1rem; border: 1px solid var(--global-divider-color); border-radius: 8px; background: var(--global-card-bg, var(--global-bg-color)); }
+.blog-search-field i { color: var(--global-text-color-light, #888); }
+.blog-search-field input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--global-text-color); font-size: 1rem; }
+.blog-search-status { margin: .6rem 0 0; min-height: 1.25rem; }
+</style>
+
+  <ul id="blog-post-list" class="post-list">
 
     {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
+      {% assign postlist = paginator.posts | where_exp: "post", "post.series == nil" %}
     {% else %}
-      {% assign postlist = site.posts %}
+      {% assign postlist = site.posts | where_exp: "post", "post.series == nil" %}
     {% endif %}
 
     {% for post in postlist %}
@@ -189,8 +152,28 @@ pagination:
 
   </ul>
 
+{% assign writing_posts = site.posts | where_exp: "post", "post.series == nil" %}
+<ul id="blog-search-results" class="post-list" hidden></ul>
+
+<script type="application/json" id="blog-search-index">
+[
+  {% for post in writing_posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "description": {{ post.description | default: "" | jsonify }},
+      "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%B %d, %Y" | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+</script>
+<script src="{{ '/assets/js/blog-search.js' | relative_url | bust_file_cache }}"></script>
+
 {% if page.pagination.enabled %}
-{% include pagination.liquid %}
+<div id="blog-pagination">
+  {% include pagination.liquid %}
+</div>
 {% endif %}
 
 </div>

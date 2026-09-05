@@ -6,6 +6,8 @@ series: genai-foundations
 series_part: 1
 series_title: "Generative AI Foundations"
 series_description: "A ground-up course covering the math and modern generative AI."
+toc:
+  beginning: true
 description: "Part 1"
 tags: generative-ai, mathematics
 categories: courses

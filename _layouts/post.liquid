@@ -17,6 +17,23 @@ layout: default
   article.post-content h1 mjx-container,
   article.post-content h2 mjx-container,
   article.post-content h3 mjx-container { vertical-align: middle; }
+  .course-toc {
+    margin: 0 0 1.5rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.75rem;
+    background: var(--global-card-bg, var(--global-bg-color));
+    color: var(--global-text-color);
+  }
+  .course-toc summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style-position: outside;
+  }
+  .course-toc nav { margin-top: 0.75rem; }
+  .course-toc ul { margin-bottom: 0; }
+  .course-toc li { margin: 0.25rem 0; }
+  .course-toc a { color: inherit; }
 </style>
 
 {% assign year = page.date | date: '%Y' %}
@@ -111,9 +128,12 @@ layout: default
 
   <article class="post-content">
     {% if page.toc and page.toc.beginning %}
-      <div id="table-of-contents">
-        {% toc %}
-      </div>
+      <details class="course-toc" open>
+        <summary>Table of Contents</summary>
+        <nav id="table-of-contents" aria-label="Table of Contents">
+          {% toc %}
+        </nav>
+      </details>
       <hr>
     {% endif %}
     <div id="markdown-content">

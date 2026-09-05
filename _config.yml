@@ -131,8 +131,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Knowledge Base # blog_name will be displayed in your blog page
-blog_description: Resources for learning and development # blog_description will be displayed in your blog page
+blog_name: writings # blog_name will be displayed in your blog page
+blog_description: Notes, essays, and explorations in AI, mathematics, and systems # blog_description will be displayed in your blog page
 future: true # display future-dated posts
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
@@ -209,10 +209,6 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
-  papers2code:  # Add this new collection
-    output: true
-    permalink: /papers2code/:title
-
 announcements:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items

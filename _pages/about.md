@@ -2,16 +2,14 @@
 layout: about
 title: Harshwardhan
 permalink: /
-subtitle: Advanced Data Scientist
+subtitle: Advanced Data Science Associate
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Advanced Data Scientist</p>
-    <p>ZS</p>
-    <p>Bangalore, Karnataka</p>
+    <p>Me</p>
 
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -19,33 +17,27 @@ social: true # includes social icons at the bottom of the page
 latest_posts: false # hide latest posts section on the about (home) page
 ---
 
-Hello! I am **Harshwardhan Fartale**, an **Advanced Data Scientist** based in **Bangalore, India**. Currently, I work at **ZS**, focusing on **Machine Learning** and **Artificial Intelligence**.
+I love **AI**.
 
-Previously, I served as:
-- **Machine Learning Engineer** at **Indian Institute of Science, Bangalore**
-- **Data Scientist** at **Bajaj Finserv Health**
-- **Machine Learning Intern** at **Indian Institute of Technology, Indore**  
+## Career ladder
+
+**Current:** Advanced Data Science Associate at **ZS**.
+
+**Previous:** Predoc Associate at **DRDO & Indian Institute of Science, Bangalore**; Data Scientist at **Bajaj Finserv Health**; Open Source Technical Writer at **OpenMined**.
 
 I earned my **Bachelor of Technology in Electrical Engineering** from the **National Institute of Technology, Hamirpur**.
 
 ---
 
-## **Research Interests**
-I am deeply passionate about **Machine Learning and Artificial Intelligence**. I am primarily interested in **Building Agents**, **Kernels for GPU Optimization** and **Post Training Large Language Models**.
-
-I am actively seeking **collaborative opportunities** with fellow researchers and practitioners who share similar interests in **these areas** and are excited to explore innovative approaches in this rapidly evolving field.
-
----
-
 ## **Hobbies & Activities**
 In my free time, I enjoy:
-- Getting upto date with AI (its a full time job now ;) 
 - Exploring history books
-- Playing *Age of Empires II*  
+- Playing *Age of Empires II* — 1300 Elo rated
 - Solving mathematical problems  
 
+I am an avid reader of books. If you want to see what I am currently reading, <a href="{{ '/papershelf/' | relative_url }}">visit my library</a>.
+
 I also:
-- Write Blogs on [**Substack**](https://harshwardhanfartale.substack.com/) and [**Medium**](https://medium.com/@emharsha1812)
 - Regularly contribute kernel questions to **LeetGPU**
 - Regularly solve [**Project Euler**](https://projecteuler.net/) problems
 - Collaborate with research scholars on academic papers and technical articles
