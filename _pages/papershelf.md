@@ -3,7 +3,7 @@ layout: page
 title: Library
 permalink: /papershelf/
 description: Books that have shaped my thinking.
-nav: false
+nav: true
 nav_order: 7
 ---
 

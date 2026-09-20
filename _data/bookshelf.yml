@@ -187,4 +187,12 @@
   publisher: "Manning Publications"
   url: "https://www.manning.com/books/ai-agents-in-action"
   thumbnail: "https://www.oreilly.com/library/cover/9781633436343/1200w630h/"
+- id: greatnesscannotbeplanned
+  title: "Why Greatness Cannot Be Planned: The Myth of the Objective"
+  author: "Kenneth O. Stanley, Joel Lehman"
+  year: 2015
+  publisher: "BenBella Books"
+  url: "https://www.goodreads.com/book/show/25614572-why-greatness-cannot-be-planned"
+  thumbnail: "https://m.media-amazon.com/images/I/61PPmbZPGxL._SY342_.jpg"
+  category: non-technical
 

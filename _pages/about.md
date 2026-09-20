@@ -21,11 +21,23 @@ I love **AI**.
 
 ## Career ladder
 
-**Current:** Advanced Data Science Associate at **ZS**.
+<ol class="career-ladder">
+  <li><strong>Current</strong><span>Advanced Data Science Associate at <strong>ZS</strong></span></li>
+  <li><strong>Previous</strong><span>Predoc Associate at <strong>DRDO & Indian Institute of Science, Bangalore</strong></span></li>
+  <li><strong>Previous</strong><span>Data Scientist at <strong>Bajaj Finserv Health</strong></span></li>
+  <li><strong>Previous</strong><span>Open Source Technical Writer at <strong>OpenMined</strong></span></li>
+  <li><strong>Education</strong><span>Bachelor of Technology in Electrical Engineering from the <strong>National Institute of Technology, Hamirpur</strong></span></li>
+</ol>
 
-**Previous:** Predoc Associate at **DRDO & Indian Institute of Science, Bangalore**; Data Scientist at **Bajaj Finserv Health**; Open Source Technical Writer at **OpenMined**.
-
-I earned my **Bachelor of Technology in Electrical Engineering** from the **National Institute of Technology, Hamirpur**.
+<style>
+.career-ladder {list-style: none; margin: 1.5rem 0 2rem; padding: 0 0 0 1.5rem; border-left: 2px solid var(--global-divider-color);}
+.career-ladder li {position: relative; display: flex; gap: .75rem; margin: 0 0 1rem; align-items: baseline;}
+.career-ladder li:last-child {margin-bottom: 0;}
+.career-ladder li::before {content: ""; position: absolute; left: -1.9rem; top: .45rem; width: .65rem; height: .65rem; border: 2px solid var(--global-theme-color); border-radius: 50%; background: var(--global-bg-color);}
+.career-ladder li > strong {min-width: 5.5rem; color: var(--global-theme-color);}
+.career-ladder li > span {flex: 1;}
+@media (max-width: 576px) {.career-ladder li {display: block;} .career-ladder li > strong {display: block; margin-bottom: .2rem;}}
+</style>
 
 ---
 
