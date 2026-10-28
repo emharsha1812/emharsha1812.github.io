@@ -18,33 +18,6 @@ pagination:
 
 <div class="post">
 
-{% assign course_posts = site.posts | where_exp: "post", "post.series" %}
-{% assign course_series = course_posts | map: "series" | uniq | sort %}
-{% if course_series.size > 0 and paginator.page == 1 %}
-  <section id="writing-courses" class="writing-courses mb-5" aria-labelledby="writing-courses-title">
-    <div class="d-flex align-items-baseline justify-content-between flex-wrap">
-      <h2 id="writing-courses-title">Courses</h2>
-      <a href="{{ '/courses/' | relative_url }}">View course index&nbsp; →</a>
-    </div>
-    <p class="text-muted">Structured learning series, separate from the one-off writings below.</p>
-    {% for series_name in course_series %}
-      {% assign series_posts = course_posts | where: "series", series_name | sort: "series_part" %}
-      {% assign first_post = series_posts | first %}
-      <article class="course-block mb-4">
-        <h3>{{ first_post.series_title | default: series_name }}</h3>
-        {% if first_post.series_description %}
-          <p>{{ first_post.series_description }}</p>
-        {% endif %}
-        <ol>
-          {% for post in series_posts %}
-            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.description %} <span class="text-muted">— {{ post.description }}</span>{% endif %}</li>
-          {% endfor %}
-        </ol>
-      </article>
-    {% endfor %}
-  </section>
-{% endif %}
-
 <p class="writing-external-links">You can find more of my writing on <a href="https://harshwardhanfartale.substack.com/" target="_blank" rel="noopener">Substack</a> and <a href="https://medium.com/@emharsha1812" target="_blank" rel="noopener">Medium</a>.</p>
 
 <form id="blog-search" class="blog-search" role="search">
@@ -67,9 +40,9 @@ pagination:
   <ul id="blog-post-list" class="post-list">
 
     {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts | where_exp: "post", "post.series == nil" %}
+      {% assign postlist = paginator.posts %}
     {% else %}
-      {% assign postlist = site.posts | where_exp: "post", "post.series == nil" %}
+      {% assign postlist = site.posts %}
     {% endif %}
 
     {% for post in postlist %}
@@ -152,7 +125,7 @@ pagination:
 
   </ul>
 
-{% assign writing_posts = site.posts | where_exp: "post", "post.series == nil" %}
+{% assign writing_posts = site.posts %}
 <ul id="blog-search-results" class="post-list" hidden></ul>
 
 <script type="application/json" id="blog-search-index">

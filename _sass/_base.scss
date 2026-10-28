@@ -148,7 +148,7 @@ ul.task-list > li ul {
 ul.task-list input[type="checkbox"] {
   appearance: checkbox !important;
   -webkit-appearance: checkbox !important;
-  accent-color: aqua !important;
+  accent-color: var(--global-text-color) !important;
 }
 
 

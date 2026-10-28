@@ -3,8 +3,8 @@ layout: post
 title: A Visit to Hungarian Mathematics
 date: 2024-09-1 00:12:00
 description: Why Hungarians are so darn good at mathematics ?
-tags: mathematics, axioms
-categories: mathematics,culture
+tags: [mathematics, axioms]
+categories: [mathematics, culture]
 tabs: true
 ---
 

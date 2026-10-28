@@ -9,7 +9,7 @@ series_description: "A ground-up course covering the math and modern generative 
 toc:
   beginning: true
 description: "Part 1"
-tags: generative-ai, mathematics
+tags: [generative-ai, mathematics]
 categories: courses
 ---
 

@@ -3,8 +3,8 @@ layout: post
 title: KL Divergence
 date: 2025-12-20 00:12:00
 description: Mathematics of KL Divergence
-tags: mathematics, machine learning
-categories: mathematics, ml
+tags: [mathematics, machine learning]
+categories: [mathematics, ml]
 tabs: true
 ---
 

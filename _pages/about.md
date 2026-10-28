@@ -6,10 +6,10 @@ subtitle: Advanced Data Science Associate
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: profile-illustration-transparent.png
+  image_no_frame: true
+  image_alt: Illustrated portrait of Harshwardhan Fartale
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>Me</p>
 
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -30,6 +30,7 @@ I love **AI**.
 </ol>
 
 <style>
+html[data-theme="dark"] .profile img { filter: invert(1); }
 .career-ladder {list-style: none; margin: 1.5rem 0 2rem; padding: 0 0 0 1.5rem; border-left: 2px solid var(--global-divider-color);}
 .career-ladder li {position: relative; display: flex; gap: .75rem; margin: 0 0 1rem; align-items: baseline;}
 .career-ladder li:last-child {margin-bottom: 0;}

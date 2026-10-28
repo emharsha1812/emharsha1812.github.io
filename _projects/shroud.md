@@ -2,7 +2,6 @@
 layout: page
 title: Shroud
 description: Agent Identity API — disposable digital identities for AI agents
-img: assets/img/shroud.png
 importance: 2
 category: work
 ---

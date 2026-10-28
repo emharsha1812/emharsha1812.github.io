@@ -1,0 +1,41 @@
+<!-- Natural Full-Bleed Terrace Horizon (Inspired by xn--rss.to & ASCII Magic) -->
+<div class="ascii-footer-container" aria-hidden="true">
+  <!-- Light Theme Terrace Image (dissolves to pure white at top) -->
+  <picture class="ascii-footer-picture light-theme-picture">
+    <source srcset="{{ '/assets/img/footer-ascii-light.webp' | relative_url }}" media="(min-width: 992px)" type="image/webp">
+    <source srcset="{{ '/assets/img/footer-ascii-light-mobile.webp' | relative_url }}" media="(max-width: 991px)" type="image/webp">
+    <img
+      src="{{ '/assets/img/footer-ascii-light.webp' | relative_url }}"
+      alt="Classical Terrace Panorama (ASCII Halftone Art - Light Mode)"
+      class="ascii-footer-img"
+      loading="lazy"
+      decoding="async"
+    >
+  </picture>
+
+  <!-- Dark Theme Terrace Image (dissolves to dark tone at top) -->
+  <picture class="ascii-footer-picture dark-theme-picture">
+    <source srcset="{{ '/assets/img/footer-ascii-dark.webp' | relative_url }}" media="(min-width: 992px)" type="image/webp">
+    <source srcset="{{ '/assets/img/footer-ascii-dark-mobile.webp' | relative_url }}" media="(max-width: 991px)" type="image/webp">
+    <img
+      src="{{ '/assets/img/footer-ascii-dark.webp' | relative_url }}"
+      alt="Classical Terrace Panorama (ASCII Halftone Art - Dark Mode)"
+      class="ascii-footer-img"
+      loading="lazy"
+      decoding="async"
+    >
+  </picture>
+
+  <!-- Overlay Footer Metadata anchored along the stone terrace floor -->
+  <div class="ascii-footer-bar">
+    <div class="container text-center">
+      {{ site.footer_text }}
+      {% if site.impressum_path %}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+      {% endif %}
+      {% if site.last_updated %}
+        <span class="footer-last-updated">Last updated: {{ 'now' | date: '%B %d, %Y' }}.</span>
+      {% endif %}
+    </div>
+  </div>
+</div>
