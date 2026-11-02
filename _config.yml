@@ -239,6 +239,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - Harshwardhan Resume - AI.zip
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md

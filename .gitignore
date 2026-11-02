@@ -11,3 +11,7 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Local resume source and working files
+/Harshwardhan Resume - AI.zip
+/.chalk-resume/

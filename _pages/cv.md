@@ -79,9 +79,8 @@ nav_order: 5
   <section>
     <h2>Key Projects</h2>
     <div class="resume-entry">
-      <h3><a href="https://knowai-frontend-seven.vercel.app/">Alcuin — Deep AI Learning Platform</a></h3>
-      <div class="resume-role"><span>Founder &amp; Engineer</span><time>2025 – Present</time></div>
-      <ul><li>Built a learning platform with mathematically rigorous AI courses and structured topic flows for many simultaneous learners.</li></ul>
+      <h3><a href="https://chalk-rl.pages.dev/">Chalk - AI Agent RL Environments</a></h3>
+      <ul><li>Built Chalk, an open-source framework for AI agent RL environments across coding, math, and custom tasks, with isolated execution and automated reward scoring.</li></ul>
     </div>
   </section>
 

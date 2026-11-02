@@ -110,12 +110,11 @@
   ],
   "projects": [
     {
-      "name": "Alcuin — Deep AI Learning Platform",
-      "summary": "A mathematically rigorous AI learning platform with structured topic flows for many simultaneous learners.",
-      "startDate": "2025",
-      "endDate": "Present",
+      "name": "Chalk - AI Agent RL Environments",
+      "summary": "An open-source framework for AI agent RL environments across coding, math, and custom tasks, with isolated execution and automated reward scoring.",
+      "url": "https://chalk-rl.pages.dev/",
       "highlights": [
-        "Built a learning platform with mathematically rigorous AI courses and structured topic flows for many simultaneous learners"
+        "Built Chalk, an open-source framework for AI agent RL environments across coding, math, and custom tasks, with isolated execution and automated reward scoring."
       ]
     }
   ],
