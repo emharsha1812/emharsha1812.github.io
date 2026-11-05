@@ -1,0 +1,5 @@
+{% assign project_initial = project.title | strip | slice: 0 | upcase %}
+<div class="project-initial" data-title="{{ project.title | escape }}" data-initial="{{ project_initial | escape }}" data-palette="{{ forloop.index0 | default: 0 }}" aria-hidden="true">
+  <span class="project-initial-fallback">{{ project_initial }}</span>
+  <canvas class="project-initial-art" width="320" height="320" style="width: 100%; height: 100%;"></canvas>
+</div>

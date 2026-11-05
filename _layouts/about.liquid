@@ -5,7 +5,9 @@ layout: default
   <header class="post-header">
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+        {% if page.profile.ascii_portrait %}
+          {% include ascii_portrait.liquid %}
+        {% elsif page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_no_frame %}
             {% assign profile_image_class = 'img-fluid' %}
@@ -38,8 +40,43 @@ layout: default
     </h1>
     <p class="desc">{{ page.subtitle }}</p>
   </header>
+  {% if page.initialis %}
+    <style>
+      .initialis-greeting { display: flex; align-items: center; gap: .15rem; margin: 1.5rem 0 2rem; font-size: 1.15rem; }
+      .initialis-heading { display: inline-grid; flex: 0 0 64px; width: 64px; height: 64px; place-items: center; }
+      .initialis-heading > * { grid-area: 1 / 1; }
+      .initialis-fallback { font-family: Georgia, serif; font-size: 56px; line-height: 1; }
+      .initialis-art { display: none; width: 64px; height: 64px; }
+      .initialis-heading.is-ready .initialis-art { display: block; }
+      .initialis-heading.is-ready .initialis-fallback { display: none; }
+    </style>
+    <script type="module">
+      import { draw } from 'https://initialis.azlen.me/lib/initialis.js';
+      const heading = document.querySelector('.initialis-heading');
+      const canvas = heading.querySelector('canvas');
+      try {
+        await draw(canvas, {
+          text: 'H', font: 'cormorant-garamond-700', frame: 'rect', seed: 18,
+          inkA: '#6e302d', inkB: '#b68b48', inkC: '#344b70', paper: '#f0e1c1',
+          fRuleColor: 'B', oFill: 'B', lOutline: 1.5, lOutlineColor: 'C'
+        }, { size: 360, paper: true });
+        heading.classList.add('is-ready');
+      } catch (error) {
+        console.warn('Could not draw the ornamental initial:', error);
+      }
+    </script>
+  {% endif %}
 
   <article>
+    {% if page.initialis %}
+      <p class="initialis-greeting" aria-label="Hi, welcome! I love AI.">
+        <span class="initialis-heading" aria-hidden="true">
+          <span class="initialis-fallback">H</span>
+          <canvas class="initialis-art" style="width: 64px; height: 64px;"></canvas>
+        </span>
+        <span aria-hidden="true">i, welcome! I love <strong>AI</strong>.</span>
+      </p>
+    {% endif %}
     <div class="clearfix">{{ content }}</div>
 
     <!-- News -->

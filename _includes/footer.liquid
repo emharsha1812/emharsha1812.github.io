@@ -11,15 +11,67 @@
     </div>
   </footer>
 {% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
+  <footer class="sticky-bottom notebook-footer mt-5" role="contentinfo">
     {% if site.newsletter.enabled %}
       {% include scripts/newsletter.liquid %}
     {% endif %}
 
     <div class="container">
-      {{ site.footer_text }}
-      {% if site.impressum_path %}<a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.{% endif %}
-      {% if site.last_updated %}Last updated: {{ 'now' | date: '%B %d, %Y' }}.{% endif %}
+      <div class="notebook-footer-rule" aria-hidden="true"><span>✦</span></div>
+      <div class="notebook-footer-content">
+        <div class="notebook-scene" aria-hidden="true">
+          <pre class="notebook-footer-art">
+                 .
+                .'.
+                 |
+                |~|
+                | |
+          ______|_|________
+         /                /|
+        /________________/ |
+       |________________| /
+        /_______________|/
+       /                /|
+      /________________/ |
+      |________________|/</pre>
+        </div>
+        <div class="notebook-footer-details">
+          <p class="notebook-footer-heading">Thank you for visiting.</p>
+          <nav class="notebook-footer-links" aria-label="Contact links">
+            {% if site.email %}<a href="mailto:{{ site.email | encode_email }}">Email</a>{% endif %}
+            {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">GitHub</a>{% endif %}
+            {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a>{% endif %}
+          </nav>
+          <p class="notebook-footer-copyright">© {{ 'now' | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}</p>
+          <div class="notebook-scene-controls">
+            <button class="notebook-scene-toggle" type="button" hidden>Pause animation</button>
+            <a href="https://github.com/JDhruv14/ascii-diorama">ASCII scene credit</a>
+          </div>
+          {% if site.footer_text %}<div class="notebook-footer-extra">{{ site.footer_text }}</div>{% endif %}
+          {% if site.impressum_path %}<a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.{% endif %}
+          {% if site.last_updated %}<p class="notebook-footer-extra">Last updated: {{ 'now' | date: '%B %d, %Y' }}.</p>{% endif %}
+        </div>
+      </div>
     </div>
+    <script>
+      (() => {
+        const scene = document.querySelector('.notebook-scene');
+        const button = document.querySelector('.notebook-scene-toggle');
+        let started = false;
+        const loadScene = () => {
+          if (started) return;
+          started = true;
+          import('{{ "/assets/diorama/notebook.min.js" | relative_url | bust_file_cache }}')
+            .then((module) => module.startNotebookDiorama(scene, button))
+            .catch(() => { /* Keep the still illustration if the scene cannot load. */ });
+        };
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) { observer.disconnect(); loadScene(); }
+          }, { rootMargin: '240px' });
+          observer.observe(scene);
+        } else loadScene();
+      })();
+    </script>
   </footer>
 {% endif %}

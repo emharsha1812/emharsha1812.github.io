@@ -67,6 +67,7 @@
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
+    {% include medieval_margin.liquid %}
 
     <!-- Content -->
     <div class="post distill">
@@ -116,8 +117,6 @@
       {% endif %}
     </div>
 
-    <!-- Footer -->
-    {% include footer.liquid %}
     {% include scripts/bootstrap.liquid %}
     {% include scripts/analytics.liquid %}
     {% include scripts/progressBar.liquid %}

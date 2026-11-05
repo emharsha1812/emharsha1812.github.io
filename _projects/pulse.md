@@ -2,7 +2,6 @@
 layout: page
 title: PULSE
 description: A comprehensive Python library for synthetic sensor data generation
-img: assets/img/pulse.png
 importance: 1
 category: work
 ---

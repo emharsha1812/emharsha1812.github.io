@@ -1,0 +1,17 @@
+<div class="ascii-portrait">
+  <div class="ascii-portrait-frame" role="img" aria-label="The Mona Lisa against a swirling starry sky, rendered in colored text characters.">
+    <img class="ascii-portrait-sky ascii-portrait-source" src="{{ '/assets/img/starry-night-ascii-sky.webp' | relative_url | bust_file_cache }}" alt="" loading="eager" decoding="async">
+    <img class="ascii-portrait-figure ascii-portrait-source" src="{{ '/assets/img/mona-lisa-ascii-portrait.webp' | relative_url | bust_file_cache }}" alt="" loading="eager" decoding="async">
+    <canvas class="ascii-portrait-canvas" width="768" height="960" aria-hidden="true" hidden></canvas>
+    <span class="ascii-portrait-star ascii-portrait-star-one" aria-hidden="true">✦</span>
+    <span class="ascii-portrait-star ascii-portrait-star-two" aria-hidden="true">✧</span>
+    <span class="ascii-portrait-star ascii-portrait-star-three" aria-hidden="true">✦</span>
+  </div>
+  <div class="ascii-portrait-controls" hidden>
+    <label for="ascii-sky-brightness">Sky</label>
+    <span aria-hidden="true">Dark</span>
+    <input id="ascii-sky-brightness" type="range" min="0" max="100" value="55" aria-label="Sky brightness">
+    <span aria-hidden="true">Light</span>
+  </div>
+</div>
+<script defer src="{{ '/assets/js/ascii-portrait.js' | relative_url | bust_file_cache }}"></script>

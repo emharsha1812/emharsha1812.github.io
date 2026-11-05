@@ -19,6 +19,7 @@
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
     <!-- Header -->
     {% include header.liquid %}
+    {% include medieval_margin.liquid %}
 
     <!-- Content -->
     <div class="container mt-5" role="main">
@@ -46,9 +47,6 @@
         {{ content }}
       {% endif %}
     </div>
-
-    <!-- Footer -->
-    {% include footer.liquid %}
 
     <!-- JavaScripts -->
     {% include scripts/jquery.liquid %}

@@ -1,0 +1,13 @@
+{
+  "name": "portfolio-notebook-diorama",
+  "private": true,
+  "scripts": {
+    "build": "esbuild main.js --bundle --minify --format=esm --legal-comments=inline --outfile=../assets/diorama/notebook.min.js"
+  },
+  "dependencies": {
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

@@ -8,6 +8,10 @@ nav_order: 5
 
 <article class="resume-page">
   <div class="resume-download"><a class="resume-download-button" href="{{ '/assets/pdf/HarshwardhanFartaleResume.pdf' | relative_url }}" download><i class="fa-solid fa-arrow-down" aria-hidden="true"></i><span>Download CV</span><span class="resume-download-type">PDF</span></a></div>
+  <!-- Decorative cutout adapted from https://world4.eu/benedictines/. -->
+  <div class="resume-monk" aria-hidden="true">
+    <img src="{{ '/assets/img/benedictine-monk-cutout.png' | relative_url | bust_file_cache }}" alt="" decoding="async">
+  </div>
   <header class="resume-header">
     <h1>Harshwardhan Fartale</h1>
     <div class="resume-contact">

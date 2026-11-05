@@ -3,21 +3,17 @@ layout: about
 title: Harshwardhan
 permalink: /
 subtitle: Advanced Data Science Associate
+initialis: true
 
 profile:
   align: right
-  image: profile-illustration-transparent.png
-  image_no_frame: true
-  image_alt: Illustrated portrait of Harshwardhan Fartale
-  image_circular: false # crops the image to make it circular
+  ascii_portrait: true
 
 news: false # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 latest_posts: false # hide latest posts section on the about (home) page
 ---
-
-I love **AI**.
 
 ## Career ladder
 
@@ -30,12 +26,11 @@ I love **AI**.
 </ol>
 
 <style>
-html[data-theme="dark"] .profile img { filter: invert(1); }
 .career-ladder {list-style: none; margin: 1.5rem 0 2rem; padding: 0 0 0 1.5rem; border-left: 2px solid var(--global-divider-color);}
 .career-ladder li {position: relative; display: flex; gap: .75rem; margin: 0 0 1rem; align-items: baseline;}
 .career-ladder li:last-child {margin-bottom: 0;}
-.career-ladder li::before {content: ""; position: absolute; left: -1.9rem; top: .45rem; width: .65rem; height: .65rem; border: 2px solid var(--global-theme-color); border-radius: 50%; background: var(--global-bg-color);}
-.career-ladder li > strong {min-width: 5.5rem; color: var(--global-theme-color);}
+.career-ladder li::before {content: ""; position: absolute; left: -1.9rem; top: .45rem; width: .65rem; height: .65rem; border: 2px solid var(--notebook-soft, var(--global-theme-color)); border-radius: 50%; background: var(--global-bg-color);}
+.career-ladder li > strong {min-width: 5.5rem; color: var(--notebook-accent, var(--global-theme-color));}
 .career-ladder li > span {flex: 1;}
 @media (max-width: 576px) {.career-ladder li {display: block;} .career-ladder li > strong {display: block; margin-bottom: .2rem;}}
 </style>

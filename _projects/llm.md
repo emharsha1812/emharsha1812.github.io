@@ -2,7 +2,6 @@
 layout: page
 title: Alfred
 description: Your Local AI Coding Butler
-img: assets/img/alfred.png
 importance: 1
 category: work
 ---

@@ -63,3 +63,4 @@ horizontal: true
   {% endif %}
 {% endif %}
 </div>
+<script type="module" src="{{ '/assets/js/project-initials.js' | relative_url | bust_file_cache }}"></script>

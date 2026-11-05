@@ -2,7 +2,6 @@
 layout: page
 title: CodeItUp
 description: A versatile online code editor with multi-language support
-img: assets/img/codeitup.png
 importance: 1
 category: work
 ---
