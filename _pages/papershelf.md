@@ -14,10 +14,6 @@ nav_order: 7
     <h2>Books</h2>
     <p>Whatever I am, I am because of them</p>
   </div>
-  <!-- Illustration supplied by the site owner: https://world4.eu/ -->
-  <div class="bookshelf-illustration" aria-hidden="true">
-    <img src="{{ '/assets/img/library-benedictines-transparent.png' | relative_url | bust_file_cache }}" alt="" decoding="async">
-  </div>
   <div class="bookshelf-grid">
     {% for book in books %}
     <article class="bookshelf-card">

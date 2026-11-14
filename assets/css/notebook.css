@@ -1,39 +1,37 @@
 /* A quiet manuscript-inspired layer over the existing portfolio. */
 :root {
-  --global-bg-color: #f5ead2;
-  --global-card-bg-color: #fbf3e3;
-  --global-text-color: #34281f;
-  --global-text-color-light: #6b5544;
-  --global-theme-color: #7d302d;
-  --global-hover-color: #a04b35;
-  --global-divider-color: #cdb891;
-  --notebook-accent: #84342d;
-  --notebook-soft: #9a702d;
-  --notebook-heading: #6e302c;
-  --notebook-navy: #334b66;
-  --notebook-nav-bg: #ebd9b8;
-  --notebook-wash: rgba(201, 164, 104, 0.13);
+  --global-bg-color: #fafafa;
+  --global-card-bg-color: #ffffff;
+  --global-text-color: #222222;
+  --global-text-color-light: #555555;
+  --global-theme-color: #222222;
+  --global-hover-color: #555555;
+  --global-divider-color: #cccccc;
+  --notebook-accent: #333333;
+  --notebook-soft: #777777;
+  --notebook-heading: #222222;
+  --notebook-navy: #333333;
+  --notebook-nav-bg: #f5f5f5;
+  --notebook-wash: transparent;
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #261c1a;
-  --global-card-bg-color: #362623;
-  --global-text-color: #f0e1c5;
-  --global-text-color-light: #cfb99a;
-  --global-theme-color: #e5bd79;
-  --global-hover-color: #f2d79f;
-  --global-divider-color: #725348;
-  --notebook-accent: #e3ba75;
-  --notebook-soft: #c59b60;
-  --notebook-heading: #efcf91;
-  --notebook-navy: #a9c0d4;
-  --notebook-nav-bg: #3a2622;
-  --notebook-wash: rgba(135, 72, 51, 0.16);
+  --global-bg-color: #1c1c1c;
+  --global-card-bg-color: #262626;
+  --global-text-color: #eeeeee;
+  --global-text-color-light: #bdbdbd;
+  --global-theme-color: #eeeeee;
+  --global-hover-color: #cccccc;
+  --global-divider-color: #555555;
+  --notebook-accent: #eeeeee;
+  --notebook-soft: #aaaaaa;
+  --notebook-heading: #eeeeee;
+  --notebook-navy: #dddddd;
+  --notebook-nav-bg: #262626;
+  --notebook-wash: transparent;
 }
 
 body {
-  --medieval-margin-width: min(clamp(32px, 7vw, 72px), calc((100vh - 100px) * 0.222));
-  --medieval-margin-space: calc(var(--medieval-margin-width) + 20px);
   position: relative;
   min-height: 100vh;
   background-color: var(--global-bg-color);
@@ -43,60 +41,6 @@ body {
 
 body.sticky-bottom-footer {
   padding-bottom: 3rem;
-}
-
-.medieval-margin-filter {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.medieval-margin {
-  display: block;
-  position: absolute;
-  z-index: 0;
-  top: 76px;
-  bottom: 0;
-  left: 8px;
-  width: var(--medieval-margin-width);
-  overflow: hidden;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 86%, transparent 100%);
-  mask-image: linear-gradient(to right, #000 0%, #000 86%, transparent 100%);
-}
-
-.medieval-margin-art {
-  position: absolute;
-  inset: 0;
-  box-sizing: border-box;
-  border-style: solid;
-  border-color: transparent;
-  border-width: calc(var(--medieval-margin-width) * 1.555172) 0 calc(var(--medieval-margin-width) * 0.872414) var(--medieval-margin-width);
-  border-image-source: var(--medieval-margin-image);
-  /* Keep the top and bottom ornaments whole; repeat only the decorated rod. */
-  border-image-slice: 451 446 253 290;
-  border-image-repeat: stretch round;
-  filter: url(#medieval-remove-paper);
-}
-
-html[data-theme="dark"] .medieval-margin-art {
-  filter: url(#medieval-remove-paper) drop-shadow(0 0 1.5px rgba(244, 217, 165, 0.7));
-}
-
-@media (min-width: 1120px) {
-  body {
-    --medieval-margin-width: min(145px, calc((100vw - 930px) / 2 - 22px), calc((100vh - 100px) * 0.222));
-  }
-}
-
-@media (max-width: 1119px) {
-  body > .container[role="main"],
-  body > .post.distill {
-    width: calc(100% - var(--medieval-margin-space));
-    margin-left: var(--medieval-margin-space);
-    margin-right: 0;
-  }
 }
 
 .post .post-title,
@@ -421,8 +365,8 @@ html[data-theme="dark"] .bookshelf-illustration img {
   height: 104px;
   place-items: center;
   overflow: hidden;
-  border: 1px solid #b68b48;
-  background: #6e302d;
+  border: 1px solid #777777;
+  background: #333333;
 }
 
 .project-initial > * {
@@ -430,7 +374,7 @@ html[data-theme="dark"] .bookshelf-illustration img {
 }
 
 .project-initial-fallback {
-  color: #f0e1c1;
+  color: #f0f0f0;
   font: 4.5rem/1 Georgia, "Times New Roman", serif;
 }
 
@@ -440,6 +384,7 @@ html[data-theme="dark"] .bookshelf-illustration img {
 
 .project-initial.is-ready .project-initial-art {
   display: block;
+  filter: grayscale(1);
 }
 
 .project-initial.is-ready .project-initial-fallback {
